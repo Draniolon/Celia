@@ -50,10 +50,11 @@
     </style>
 </head>
 <body class="min-h-screen flex flex-col bg-[#2bb8b8] text-white font-['Roboto',sans-serif]">
-    <main class="flex-grow flex items-center justify-center min-h-0 py-8 px-0">
+    <main class="flex-grow flex flex-col items-center justify-center min-h-0 py-8 px-0">
         <div class="max-w-7xl w-full mx-auto flex flex-col flex-grow space-y-8 min-h-0">
             <!-- Carousel -->
-            <section id="carousel" class="relative overflow-visible">
+            <section id="carousel" class="relative overflow-visible w-full mb-12">
+
                 <button id="prev" class="carousel-ctrl -left-7">
                     <i class="fas fa-chevron-left"></i>
                 </button>
@@ -85,7 +86,6 @@
                             <a href="https://www.linkedin.com/in/célia-pétillion/" class="action-btn" target="_blank" rel="noopener noreferrer">
                                 <span class="font-medium text-xl">LinkedIn</span>
                             </a>
-                            
                         </div>
                     </div>
                     <!-- Slide 2: Compétences -->
@@ -127,7 +127,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Slide 3: Formation -->
+                    <!-- Slide 3: Formations -->
                     <div class="slide slide-box flex-col items-center justify-center h-full min-h-[500px] p-6">
                         <h2 class="text-4xl font-bold text-center mb-2">FORMATIONS</h2>
                         <div id="formation-scroll" class="relative w-full flex flex-row overflow-x-auto scrollbar-none cursor-grab items-center" style="scrollbar-width: none; -ms-overflow-style: none; min-height: 340px;">
@@ -210,59 +210,11 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Slide 5: Mes recommandations -->
-                    <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-visible">
-                        <h2 class="text-4xl font-bold text-center mb-6">Mes recommandations</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 justify-items-center">
-                            <!-- Recommandation 1 -->
-                            <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all w-[300px] bg-white/20">
-                                <span class="text-2xl font-semibold">Luny Asthiers</span>
-                                <a href="assets/recommandations/Lettre de recommandation - Luny Asthiers.pdf" target="_blank" rel="noopener noreferrer" class="text-sm opacity-100 text-white border border-white px-4 py-2 rounded-full mt-2 transition-colors hover:bg-[#8eddd4]">
-                                    Télécharger ↗
-                                </a>
-                            </div>
-                            <!-- Recommandation 2 -->
-                            <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all w-[300px] bg-white/20">
-                                <span class="text-2xl font-semibold">Mairie de Neuilly</span>
-                                <a href="assets/recommandations/Lettre de recommandation de la mairie.pdf" target="_blank" rel="noopener noreferrer" class="text-sm opacity-100 text-white border border-white px-4 py-2 rounded-full mt-2 transition-colors hover:bg-[#8eddd4]">
-                                    Télécharger ↗
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-visible">
-                        <h2 class="text-4xl font-bold text-center mb-6">CONTACT</h2>
-                        <div class="grid grid-cols-3 gap-12 justify-items-center">
-                            <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all cursor-pointer w-[300px]">
-                                <i class="fas fa-envelope text-4xl"></i>
-                                <span class="text-xl">Email</span>
-                                <span class="text-lg opacity-75">celia.petillion@gmail.com</span>
-                            </div>
-                            <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all cursor-pointer w-[300px]">
-                                <i class="fab fa-linkedin text-4xl"></i>
-                                <span class="text-xl">LinkedIn</span>
-                                <span class="text-lg opacity-75">Célia Pétillion</span>
-                                <a href="https://www.linkedin.com/in/célia-pétillion/" target="_blank" rel="noopener noreferrer" class="text-sm opacity-75 hover:opacity-100 text-[#7fcfc9]">Voir le profil ↗</a>
-                            </div>
-                            <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all cursor-pointer w-[300px]">
-                                <i class="fas fa-phone text-4xl"></i>
-                                <span class="text-xl">Téléphone</span>
-                                <span class="text-lg opacity-75">06 95 90 54 27</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-4">
-                    <button class="w-4 h-4 rounded-full bg-white" data-index="0"></button>
-                    <button class="w-4 h-4 rounded-full bg-white/60" data-index="1"></button>
-                    <button class="w-4 h-4 rounded-full bg-white/60" data-index="2"></button>
-                    <button class="w-4 h-4 rounded-full bg-white/60" data-index="3"></button>
-                    <button class="w-4 h-4 rounded-full bg-white/60" data-index="4"></button>
-                </div>
+                <div id="carousel-dots" class="flex justify-center gap-4 mt-6"></div>
                 <!-- Projets -->
-
-            </section>
-            <!-- Projets -->
+               </section>
+                <div class="max-w-7xl w-full mx-auto flex flex-col flex-grow space-y-8 min-h-0">
             <section class="grid grid-cols-1 md:grid-cols-3 gap-10">
                 <div class="project-card" data-project="pro">
                     <img src="assets/images/profil/pro.png" alt="Projet professionnel" class="w-full max-w-[800px] max-h-[600px] aspect-[4/3] rounded-lg cursor-pointer object-cover" />
@@ -309,19 +261,36 @@
     </main>
     <script>
         const slides = document.querySelectorAll('#carousel .slide');
-        const dots = document.querySelectorAll('#carousel [data-index]');
+        const dotsContainer = document.getElementById('carousel-dots');
         let index = 0;
+
+        // Génère les dots dynamiquement
+        function renderDots() {
+            dotsContainer.innerHTML = '';
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = `w-4 h-4 rounded-full border border-white bg-white/60 transition-colors duration-200`;
+                dot.setAttribute('data-index', i);
+                if (i === 0) dot.classList.add('bg-white');
+                dot.addEventListener('click', () => showSlide(i));
+                dotsContainer.appendChild(dot);
+            });
+        }
+
         // Affiche uniquement la première slide au chargement
         slides.forEach((s, idx) => s.classList.toggle('active', idx === 0));
+        renderDots();
+
         function showSlide(i) {
             slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
-            dots.forEach((d, idx) => d.classList.toggle('bg-white', idx === i));
-            dots.forEach((d, idx) => d.classList.toggle('bg-white/60', idx !== i));
+            Array.from(dotsContainer.children).forEach((d, idx) => {
+                d.classList.toggle('bg-white', idx === i);
+                d.classList.toggle('bg-white/60', idx !== i);
+            });
             index = i;
         }
         document.getElementById('next').addEventListener('click', () => showSlide((index + 1) % slides.length));
         document.getElementById('prev').addEventListener('click', () => showSlide((index - 1 + slides.length) % slides.length));
-        dots.forEach(d => d.addEventListener('click', () => showSlide(+d.dataset.index)));
     </script>
     <script>
         // Drag to scroll for formation section
