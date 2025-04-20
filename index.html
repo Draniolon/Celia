@@ -6,6 +6,7 @@
     <title>Portfolio Célia Pétillion</title>
     <link rel="icon" type="image/x-icon" href="assets/icon/icon.ico">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style type="text/tailwindcss">
         .logo-box {
             @apply w-20 h-20 bg-white/20 rounded-lg flex items-center justify-center transition-transform duration-200 hover:scale-110;
@@ -20,7 +21,11 @@
         }
 
         .carousel-ctrl {
-            @apply absolute top-1/2 w-14 h-14 bg-white/80 text-black rounded-full flex items-center justify-center hover:scale-110 transition z-50;
+            @apply absolute top-1/2 -translate-y-1/2 w-14 h-14 bg-white/80 rounded-full flex items-center justify-center hover:scale-110 transition z-50;
+        }
+
+        .carousel-ctrl i {
+            @apply text-[#2bb8b8] text-2xl font-bold;
         }
 
         .project-card {
@@ -49,12 +54,18 @@
         <div class="max-w-7xl w-full mx-auto flex flex-col flex-grow space-y-8 min-h-0">
             <!-- Carousel -->
             <section id="carousel" class="relative overflow-visible">
+                <button id="prev" class="carousel-ctrl -left-7">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="next" class="carousel-ctrl -right-7">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
                 <div class="slides">
                     <!-- Slide 1: Profil -->
                     <div class="slide slide-box">
                         <div class="flex flex-col md:flex-row items-center md:items-start gap-12">
-                            <div class="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden flex items-center justify-center">
-                                <img src="assets/images/profil.png" alt="Portrait" class="w-full h-full object-cover object-top scale-110 transition-transform hover:scale-105 cursor-pointer" />
+                            <div class="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden flex items-center justify-center border-4 border-white/80">
+                                <img src="assets/images/profil/profil.png" alt="Portrait" class="w-full h-full object-cover object-top scale-110 transition-transform hover:scale-105" />
                             </div>
                             <div>
                                 <h1 class="text-5xl font-bold tracking-wide">CÉLIA PÉTILLION</h1>
@@ -83,46 +94,44 @@
                     <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-hidden">
                         <div class="flex flex-col md:flex-row gap-12 justify-around">
                             <div>
-                                <h2 class="text-4xl font-bold text-center">COMPÉTENCES</h2>
+                                <h2 class="text-4xl font-bold text-center">LOGICIELS</h2>
                                 <div class="grid grid-cols-4 gap-8 mt-8">
-                                    <!-- 12 logos -->
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
+                                    <div class="logo-box group relative"><img src="https://www.adobe.com/content/dam/cc/icons/indesign.svg" alt="InDesign" class="w-12 h-12"><span class="tooltip-bulle">InDesign</span></div>
+                                    <div class="logo-box group relative"><img src="https://www.adobe.com/content/dam/cc/icons/photoshop.svg" alt="Photoshop" class="w-12 h-12"><span class="tooltip-bulle">Photoshop</span></div>
+                                    <div class="logo-box group relative"><img src="https://www.adobe.com/content/dam/cc/icons/illustrator.svg" alt="Illustrator" class="w-12 h-12"><span class="tooltip-bulle">Illustrator</span></div>
+                                    <div class="logo-box group relative"><img src="https://www.adobe.com/content/dam/cc/icons/aftereffects.svg" alt="After Effects" class="w-12 h-12"><span class="tooltip-bulle">After Effects</span></div>
+                                    <div class="logo-box group relative"><img src="assets/images/competences/3dsMax.jpg" alt="3DS Max" class="w-12 h-12"><span class="tooltip-bulle">3DS Max</span></div>
+                                    <div class="logo-box group relative"><img src="https://cdn.icon-icons.com/icons2/615/PNG/256/Unity_icon-icons.com_56592.png" alt="Unity" class="w-12 h-12"><span class="tooltip-bulle">Unity</span></div>
+                                    <div class="logo-box group relative"><img src="assets/images/competences/ToonBoom.svg" alt="Harmony ToonBoom" class="w-12 h-12"><span class="tooltip-bulle">Toon Boom Harmony</span></div>
+                                    <div class="logo-box group relative"><img src="https://www.vectorlogo.zone/logos/canva/canva-icon.svg" alt="Canva" class="w-12 h-12"><span class="tooltip-bulle">Canva</span></div>
+                                    <div class="logo-box group relative"><img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Calligrakrita-base.svg" alt="Krita" class="w-12 h-12"><span class="tooltip-bulle">Krita</span></div>
+                                    <div class="logo-box group relative"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Microsoft_Office_logo_%282013%E2%80%932019%29.svg" alt="Pack Office" class="w-12 h-12"><span class="tooltip-bulle">Pack Office</span></div>
+                                    <div class="logo-box group relative"><img src="assets/images/competences/bandLab.png" alt="Bandlab" class="w-12 h-12"><span class="tooltip-bulle">BandLab</span></div>
+                                    <div class="logo-box group relative"><img src="https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg" alt="WordPress" class="w-12 h-12"><span class="tooltip-bulle">WordPress</span></div>
                                 </div>
                             </div>
                             <div>
-                                <h2 class="text-4xl font-bold text-center">LOGICIELS</h2>
+                                <h2 class="text-4xl font-bold text-center">COMPÉTENCES</h2>
                                 <div class="grid grid-cols-4 gap-8 mt-8">
-                                    <!-- 12 logos -->
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">InDesign</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Photoshop</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Illustrator</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">After Effect</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
-                                    <div class="logo-box group relative"><span class="text-base">Logo</span><span class="tooltip-bulle">Logo</span></div>
+                                    <div class="logo-box group relative"><i class="fas fa-ruler-combined text-4xl"></i><span class="tooltip-bulle">Rigueur</span></div>
+                                    <div class="logo-box group relative"><i class="fas fa-user-gear text-4xl"></i><span class="tooltip-bulle">Autonomie</span></div>
+                                    <div class="logo-box group relative"><i class="fas fa-users-gear text-4xl"></i><span class="tooltip-bulle">Travail en équipe</span></div>
+                                    <div class="logo-box group relative"><i class="fas fa-language text-4xl"></i><span class="tooltip-bulle">Anglais niveau B2</span></div>
+                                    <div class="logo-box group relative"><i class="fas fa-lightbulb text-4xl"></i><span class="tooltip-bulle">Force de proposition</span></div>
+                                    <div class="logo-box group relative"><i class="fas fa-clock text-4xl"></i><span class="tooltip-bulle">Gestion du temps</span></div>
+                                    <div class="logo-box group relative"><i class="fas fa-pencil text-4xl"></i><span class="tooltip-bulle">Créativité</span></div>
+                                    <div class="logo-box group relative"><i class="fas fa-brain text-4xl"></i><span class="tooltip-bulle">Prompt Engineering (IA générative)</span></div>
+                                    <div class="logo-box group relative"><i class="fas fa-comments text-4xl"></i><span class="tooltip-bulle">Communication</span></div>
+                                    <div class="logo-box group relative"><i class="fas fa-list-check text-4xl"></i><span class="tooltip-bulle">Organisation</span></div>
+                                    <div class="logo-box group relative"><i class="fas fa-puzzle-piece text-4xl"></i><span class="tooltip-bulle">Adaptabilité</span></div>
+                                    <div class="logo-box group relative"><i class="fas fa-gear text-4xl"></i><span class="tooltip-bulle">Résolution de problèmes</span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Slide 3: Teste -->
+                    <!-- Slide 3: Formation -->
                     <div class="slide slide-box flex-col items-center justify-center h-full min-h-[500px]">
-                        <h2 class="text-4xl font-bold text-center mb-6">FORMATION</h2>
+                        <h2 class="text-4xl font-bold text-center mb-6">FORMATIONS</h2>
                         <div id="formation-scroll" class="relative w-full flex flex-row overflow-x-auto scrollbar-none cursor-grab items-center" style="scrollbar-width: none; -ms-overflow-style: none; min-height: 340px;">
                             <svg class="absolute left-0 top-1/2 -translate-y-1/2 z-0" width="100%" height="24" viewBox="0 0 1200 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="pointer-events:none">
                                 <line x1="24" y1="12" x2="1170" y2="12" stroke="white" stroke-width="4" />
@@ -154,43 +163,150 @@
                                 <!-- 4: Bas -->
                                 <div class="relative flex flex-col items-center">
                                     <div class="bg-white/10 rounded-xl p-6 flex flex-col mb-0 mt-28 group relative">
-                                        <span class="text-lg font-bold text-white">2023-2024</span>
+                                        <span class="text-lg font-bold text-white">2023-2026</span>
                                         <span class="tooltip-bulle">1<sup>re</sup> année à l’école supérieure de graphisme - Garti - Neuilly-sur-Seine</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Slide 4: Mes recommandations -->
+                    <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-hidden">
+                        <h2 class="text-4xl font-bold text-center mb-12">Mes recommandations</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 justify-items-center">
+                            <!-- Recommandation 1 -->
+                            <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all w-[300px]">
+                                <span class="text-2xl font-semibold">Nom Prénom 1</span>
+                                <a href="assets/recommandations/Lettre de recommandation - Luny Asthiers.pdf" target="_blank" rel="noopener noreferrer" class="text-sm opacity-75 hover:opacity-100 text-[#7fcfc9] border border-[#7fcfc9] px-4 py-2 rounded-full mt-2 transition-colors hover:bg-[#8eddd4] hover:text-white">
+                                    Télécharger la recommandation ↗
+                                </a>
+                            </div>
+                            <!-- Recommandation 2 -->
+                            <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all w-[300px]">
+                                <span class="text-2xl font-semibold">Nom Prénom 2</span>
+                                <a href="assets/recommandations/Lettre de recommandation de la mairie.pdf" target="_blank" rel="noopener noreferrer" class="text-sm opacity-75 hover:opacity-100 text-[#7fcfc9] border border-[#7fcfc9] px-4 py-2 rounded-full mt-2 transition-colors hover:bg-[#8eddd4] hover:text-white">
+                                    Télécharger la recommandation ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 5: Contact -->
+                    <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-hidden">
+                        <h2 class="text-4xl font-bold text-center mb-12">CONTACT</h2>
+                        <div class="grid grid-cols-3 gap-12 justify-items-center">
+                            <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all cursor-pointer w-[300px]">
+                                <i class="fas fa-envelope text-4xl"></i>
+                                <span class="text-xl">Email</span>
+                                <span class="text-lg opacity-75">celia.petillion@gmail.com</span>
+                            </div>
+                            <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all cursor-pointer w-[300px]">
+                                <i class="fab fa-linkedin text-4xl"></i>
+                                <span class="text-xl">LinkedIn</span>
+                                <span class="text-lg opacity-75">Célia Pétillion</span>
+                                <a href="https://www.linkedin.com/in/célia-pétillion/" target="_blank" rel="noopener noreferrer" class="text-sm opacity-75 hover:opacity-100 text-[#7fcfc9]">Voir le profil ↗</a>
+                            </div>
+                            <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all cursor-pointer w-[300px]">
+                                <i class="fas fa-phone text-4xl"></i>
+                                <span class="text-xl">Téléphone</span>
+                                <span class="text-lg opacity-75">06 95 90 54 27</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 5: Mes recommandations -->
+                    <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-hidden">
+                        <h2 class="text-4xl font-bold text-center mb-12">Mes recommandations</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 justify-items-center">
+                            <!-- Recommandation 1 -->
+                            <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all w-[300px]">
+                                <span class="text-2xl font-semibold">Nom Prénom 1</span>
+                                <a href="assets/recommandations/Lettre de recommandation - Luny Asthiers.pdf" target="_blank" rel="noopener noreferrer" class="text-sm opacity-75 hover:opacity-100 text-[#7fcfc9] border border-[#7fcfc9] px-4 py-2 rounded-full mt-2 transition-colors hover:bg-[#8eddd4] hover:text-white">
+                                    Télécharger la recommandation ↗
+                                </a>
+                            </div>
+                            <!-- Recommandation 2 -->
+                            <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all w-[300px]">
+                                <span class="text-2xl font-semibold">Nom Prénom 2</span>
+                                <a href="assets/recommandations/Lettre de recommandation de la mairie.pdf" target="_blank" rel="noopener noreferrer" class="text-sm opacity-75 hover:opacity-100 text-[#7fcfc9] border border-[#7fcfc9] px-4 py-2 rounded-full mt-2 transition-colors hover:bg-[#8eddd4] hover:text-white">
+                                    Télécharger la recommandation ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-hidden">
+                        <h2 class="text-4xl font-bold text-center mb-12">CONTACT</h2>
+                        <div class="grid grid-cols-3 gap-12 justify-items-center">
+                            <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all cursor-pointer w-[300px]">
+                                <i class="fas fa-envelope text-4xl"></i>
+                                <span class="text-xl">Email</span>
+                                <span class="text-lg opacity-75">celia.petillion@gmail.com</span>
+                            </div>
+                            <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all cursor-pointer w-[300px]">
+                                <i class="fab fa-linkedin text-4xl"></i>
+                                <span class="text-xl">LinkedIn</span>
+                                <span class="text-lg opacity-75">Célia Pétillion</span>
+                                <a href="https://www.linkedin.com/in/célia-pétillion/" target="_blank" rel="noopener noreferrer" class="text-sm opacity-75 hover:opacity-100 text-[#7fcfc9]">Voir le profil ↗</a>
+                            </div>
+                            <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all cursor-pointer w-[300px]">
+                                <i class="fas fa-phone text-4xl"></i>
+                                <span class="text-xl">Téléphone</span>
+                                <span class="text-lg opacity-75">06 95 90 54 27</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Controls -->
-                <button id="prev" class="carousel-ctrl left-0 transform -translate-y-1/2 -translate-x-1/2 text-3xl font-bold cursor-pointer">
-                    <span class="font-bold" style="color: #2bb8b8">&lt;</span>
-                </button>
-                <button id="next" class="carousel-ctrl right-0 transform -translate-y-1/2 translate-x-1/2 text-3xl font-bold cursor-pointer">
-                    <span class="font-bold" style="color: #2bb8b8">&gt;</span>
-                </button>
-                <!-- Dots -->
-                <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-5">
-                    <span data-index="0" class="w-5 h-5 bg-white rounded-full cursor-pointer"></span>
-                    <span data-index="1" class="w-5 h-5 bg-white/60 rounded-full cursor-pointer"></span>
-                    <span data-index="2" class="w-5 h-5 bg-white/60 rounded-full cursor-pointer"></span>
+                <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-4">
+                    <button class="w-4 h-4 rounded-full bg-white" data-index="0"></button>
+                    <button class="w-4 h-4 rounded-full bg-white/60" data-index="1"></button>
+                    <button class="w-4 h-4 rounded-full bg-white/60" data-index="2"></button>
+                    <button class="w-4 h-4 rounded-full bg-white/60" data-index="3"></button>
+                    <button class="w-4 h-4 rounded-full bg-white/60" data-index="4"></button>
                 </div>
+                <!-- Projets -->
+
             </section>
             <!-- Projets -->
             <section class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="project-card">
-                    <img src="assets/images/pro.png" alt="Projet professionnel" class="w-full max-w-[800px] max-h-[600px] aspect-[4/3] rounded-lg cursor-pointer object-cover" />
+                <div class="project-card" data-project="pro">
+                    <img src="assets/images/profil/pro.png" alt="Projet professionnel" class="w-full max-w-[800px] max-h-[600px] aspect-[4/3] rounded-lg cursor-pointer object-cover" />
                     <div class="absolute bottom-6 left-1/2 -translate-x-1/2 pointer-events-none text-2xl font-bold uppercase text-white drop-shadow-lg transition-transform group-hover:scale-105 text-center whitespace-nowrap overflow-x-auto">Projets Professionnels</div>
                 </div>
-                <div class="project-card">
-                    <img src="assets/images/scolair.png" alt="Projet scolaire" class="w-full max-w-[800px] max-h-[600px] aspect-[4/3] rounded-lg cursor-pointer object-cover object-top" />
+                <div class="project-card" data-project="scolaire">
+                    <img src="assets/images/profil/scolair.png" alt="Projet scolaire" class="w-full max-w-[800px] max-h-[600px] aspect-[4/3] rounded-lg cursor-pointer object-cover object-top" />
                     <div class="absolute bottom-6 left-1/2 -translate-x-1/2 pointer-events-none text-2xl font-bold uppercase text-white drop-shadow-lg transition-transform group-hover:scale-105 text-center whitespace-nowrap overflow-x-auto">Projets Scolaires</div>
                 </div>
-                <div class="project-card">
-                    <img src="assets/images/perso2.png" alt="Projet personnel" class="w-full max-w-[800px] max-h-[600px] aspect-[4/3] rounded-lg cursor-pointer object-cover" />
+                <div class="project-card" data-project="perso">
+                    <img src="assets/images/profil/perso2.png" alt="Projet personnel" class="w-full max-w-[800px] max-h-[600px] aspect-[4/3] rounded-lg cursor-pointer object-cover" />
                     <div class="absolute bottom-6 left-1/2 -translate-x-1/2 pointer-events-none text-2xl font-bold uppercase text-white drop-shadow-lg transition-transform group-hover:scale-105 text-center whitespace-nowrap overflow-x-auto">Projets Personnels</div>
                 </div>
             </section>
+
+            <!-- Sections de détails des projets -->
+            <div class="project-details hidden" id="pro-details">
+                <div class="w-full h-1 bg-white/50 my-8"></div>
+                <h3 class="text-3xl font-bold text-center mb-8">Projets Professionnels</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Ajoutez vos projets professionnels ici -->
+                </div>
+                <div class="w-full h-1 bg-white/50 my-8"></div>
+            </div>
+
+            <div class="project-details hidden" id="scolaire-details">
+                <div class="w-full h-1 bg-white/50 my-8"></div>
+                <h3 class="text-3xl font-bold text-center mb-8">Projets Scolaires</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Ajoutez vos projets scolaires ici -->
+                </div>
+                <div class="w-full h-1 bg-white/50 my-8"></div>
+            </div>
+
+            <div class="project-details hidden" id="perso-details">
+                <div class="w-full h-1 bg-white/50 my-8"></div>
+                <h3 class="text-3xl font-bold text-center mb-8">Projets Personnels</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Ajoutez vos projets personnels ici -->
+                </div>
+                <div class="w-full h-1 bg-white/50 my-8"></div>
+            </div>
         </div>
     </main>
     <script>
@@ -247,6 +363,36 @@
             const x = e.touches[0].pageX;
             const walk = (x - touchStartX) * 1.2;
             formationScroll.scrollLeft = touchScrollLeft - walk;
+        });
+    </script>
+
+    <script>
+        // Gestion des sections de projets
+        const projectCards = document.querySelectorAll('.project-card');
+        const projectDetails = document.querySelectorAll('.project-details');
+        let currentProject = null;
+
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const projectType = card.dataset.project;
+                const detailsSection = document.getElementById(`${projectType}-details`);
+
+                if (currentProject === detailsSection) {
+                    // Si on clique sur le même projet, on le cache
+                    detailsSection.classList.add('hidden');
+                    currentProject = null;
+                } else {
+                    // Cacher la section précédente si elle existe
+                    if (currentProject) {
+                        currentProject.classList.add('hidden');
+                    }
+                    // Afficher la nouvelle section
+                    detailsSection.classList.remove('hidden');
+                    currentProject = detailsSection;
+                    // Scroll vers la section
+                    detailsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         });
     </script>
 </body>
