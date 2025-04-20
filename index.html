@@ -45,7 +45,7 @@
         }
 
         .tooltip-bulle {
-            @apply absolute left-1/2 -translate-x-1/2 -top-3.5 -mt-1 px-2 py-1 rounded bg-[#2bb8b8] text-white text-xs opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap z-10;
+            @apply absolute left-1/2 -translate-x-1/2 -top-3.5 -mt-1 px-2 py-1 rounded bg-[#2bb8b8] text-white text-xs opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap z-50;
         }
     </style>
 </head>
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                     <!-- Slide 2: Compétences -->
-                    <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-hidden">
+                    <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-visible">
                         <div class="flex flex-col md:flex-row gap-12 justify-around">
                             <div>
                                 <h2 class="text-4xl font-bold text-center">LOGICIELS</h2>
@@ -120,7 +120,7 @@
                                     <div class="logo-box group relative"><i class="fas fa-lightbulb text-5xl"></i><span class="tooltip-bulle">Force de proposition</span></div>
                                     <div class="logo-box group relative"><i class="fas fa-clock text-4xl"></i><span class="tooltip-bulle">Gestion du temps</span></div>
                                     <div class="logo-box group relative"><i class="fas fa-pencil text-4xl"></i><span class="tooltip-bulle">Créativité</span></div>
-                                    <div class="logo-box group relative"><i class="fas fa-brain text-4xl"></i><span class="tooltip-bulle">Prompt Engineering (IA générative)</span></div>
+                                    <div class="logo-box group relative"><i class="fas fa-brain text-4xl"></i><span class="tooltip-bulle">IA générative</span></div>
                                     <div class="logo-box group relative"><i class="fas fa-comments text-4xl"></i><span class="tooltip-bulle">Communication</span></div>
                                     <div class="logo-box group relative"><i class="fas fa-list-check text-4xl"></i><span class="tooltip-bulle">Organisation</span></div>
                                     <div class="logo-box group relative"><i class="fas fa-puzzle-piece text-4xl"></i><span class="tooltip-bulle">Adaptabilité</span></div>
@@ -140,38 +140,38 @@
                             <!-- Bubbles alternées -->
                             <div class="flex flex-row items-center gap-0 w-full z-10 justify-around">
                                 <!-- 1: Haut -->
-                                <div class="relative flex flex-col items-center">
-                                    <div class="bg-white/10 rounded-xl p-6 flex flex-col -mt-24 group relative">
+                                <div class="relative flex flex-col items-center group">
+                                    <div class="bg-white/30 rounded-xl p-6 flex flex-col -mt-24 relative transition-colors duration-200 group-hover:bg-white/50">
                                         <span class="text-lg font-bold text-white">2019</span>
-                                        <span class="tooltip-bulle">Bac littéraire avec option Arts Plastiques – Lycée La Bruyère – Versailles</span>
+                                        <span class="tooltip-bulle">Bac Littéraire – Lycée La Bruyère – Option Arts Plastiques</span>
                                     </div>
                                 </div>
                                 <!-- 2: Bas -->
-                                <div class="relative flex flex-col items-center">
-                                    <div class="bg-white/10 rounded-xl p-6 flex flex-col mb-0 mt-28 group relative">
+                                <div class="relative flex flex-col items-center group">
+                                    <div class="bg-white/30 rounded-xl p-6 flex flex-col mb-0 mt-28 relative transition-colors duration-200 group-hover:bg-white/50">
                                         <span class="text-lg font-bold text-white">2019-2021</span>
                                         <span class="tooltip-bulle">Bachelor création et design – Créapole – Paris</span>
                                     </div>
                                 </div>
                                 <!-- 3: Haut -->
-                                <div class="relative flex flex-col items-center">
-                                    <div class="bg-white/10 rounded-xl p-6 flex flex-col -mt-24 group relative">
+                                <div class="relative flex flex-col items-center group">
+                                    <div class="bg-white/30 rounded-xl p-6 flex flex-col -mt-24 relative transition-colors duration-200 group-hover:bg-white/50">
                                         <span class="text-lg font-bold text-white">2021-2022</span>
                                         <span class="tooltip-bulle">Formation d’écrivain public - CNED - Formation à distance</span>
                                     </div>
                                 </div>
                                 <!-- 4: Bas -->
-                                <div class="relative flex flex-col items-center">
-                                    <div class="bg-white/10 rounded-xl p-6 flex flex-col mb-0 mt-28 group relative">
+                                <div class="relative flex flex-col items-center group">
+                                    <div class="bg-white/30 rounded-xl p-6 flex flex-col mb-0 mt-28 relative transition-colors duration-200 group-hover:bg-white/50">
                                         <span class="text-lg font-bold text-white">2023-2026</span>
-                                        <span class="tooltip-bulle">1<sup>re</sup> année à l’école supérieure de graphisme - Garti - Neuilly-sur-Seine</span>
+                                        <span class="tooltip-bulle z-50" style="z-index:9999;">École supérieure de graphisme - Garti - Neuilly-sur-Seine</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Slide 4: Mes recommandations -->
-                    <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-hidden">
+                    <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-visible">
                         <h2 class="text-4xl font-bold text-center mb-12">Mes recommandations</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 justify-items-center">
                             <!-- Recommandation 1 -->
@@ -191,7 +191,7 @@
                         </div>
                     </div>
                     <!-- Slide 5: Contact -->
-                    <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-hidden">
+                    <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-visible">
                         <h2 class="text-4xl font-bold text-center mb-12">CONTACT</h2>
                         <div class="grid grid-cols-3 gap-12 justify-items-center">
                             <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all cursor-pointer w-[300px]">
@@ -213,7 +213,7 @@
                         </div>
                     </div>
                     <!-- Slide 5: Mes recommandations -->
-                    <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-hidden">
+                    <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-visible">
                         <h2 class="text-4xl font-bold text-center mb-12">Mes recommandations</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 justify-items-center">
                             <!-- Recommandation 1 -->
@@ -232,7 +232,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-hidden">
+                    <div class="slide flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-visible">
                         <h2 class="text-4xl font-bold text-center mb-12">CONTACT</h2>
                         <div class="grid grid-cols-3 gap-12 justify-items-center">
                             <div class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all cursor-pointer w-[300px]">
