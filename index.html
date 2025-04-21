@@ -17,10 +17,7 @@
         }
 
         .slide-box {
-            @apply flex flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl;
-        }
-        .slide-box {
-            overflow: visible;
+            @apply flex flex-col justify-center border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-visible;
         }
 
         .carousel-ctrl {
@@ -36,7 +33,7 @@
         }
 
         .slide {
-            @apply absolute top-0 left-0 w-full h-full min-h-[500px] opacity-0 pointer-events-none transition-opacity duration-500 flex;
+            @apply absolute top-0 left-0 w-full h-full min-h-[500px] opacity-0 pointer-events-none transition-opacity duration-500;
         }
 
             .slide.active {
@@ -93,7 +90,7 @@
         </div>
     </div>
     <!-- Slide 2: Compétences -->
-    <div class="slide flex flex-col justify-center items-center h-full border-4 border-white/50 pt-4 pb-4 px-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-visible">
+    <div class="slide slide-box">
         <div class="flex flex-col md:flex-row gap-32 justify-center">
             <div class="mx-auto">
                 <h2 class="text-4xl font-bold text-center mb-2">LOGICIELS</h2>
@@ -132,9 +129,9 @@
         </div>
     </div>
     <!-- Slide 3: Formations -->
-    <div class="slide slide-box flex-col items-center justify-center h-full min-h-[500px] p-6" style="overflow:visible;">
-        <h2 class="text-4xl font-bold text-center mb-2">FORMATIONS</h2>
-        <div id="formation-scroll" class="relative w-full flex flex-row overflow-x-auto scrollbar-none cursor-grab items-center" style="scrollbar-width: none; -ms-overflow-style: none; min-height: 340px;">
+    <div class="slide slide-box">
+        <h2 class="text-4xl font-bold text-center mb-6">FORMATIONS</h2>
+        <div id="formation-scroll" class="flex-1 relative w-full flex flex-row overflow-x-auto scrollbar-none cursor-grab items-center" style="scrollbar-width: none; -ms-overflow-style: none;">
             <svg class="absolute left-0 top-1/2 -translate-y-1/2 z-0" width="100%" height="24" viewBox="0 0 1200 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="pointer-events:none">
                 <line x1="24" y1="12" x2="1170" y2="12" stroke="white" stroke-width="4" />
                 <polygon points="1170,2 1200,12 1170,22" fill="white" />
@@ -173,7 +170,7 @@
         </div>
     </div>
     <!-- Slide 4: Mes recommandations -->
-    <div class="slide flex flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-visible h-full">
+    <div class="slide slide-box">
         <h2 class="text-4xl font-bold text-center mb-6">Mes recommandations</h2>
         <div class="flex-1 flex justify-center items-center w-full">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 justify-items-center">
@@ -195,7 +192,7 @@
         </div>
     </div>
     <!-- Slide 5: Contact -->
-    <div class="slide flex flex-col border-4 border-white/50 p-16 rounded-lg shadow-lg bg-transparent hover:shadow-2xl overflow-visible h-full">
+    <div class="slide slide-box">
         <h2 class="text-4xl font-bold text-center mb-6">CONTACT</h2>
         <div class="flex-1 flex justify-center items-center">
             <div class="grid grid-cols-3 gap-12 justify-items-center">
@@ -218,10 +215,9 @@
             </div>
         </div>
     </div>
+    <div id="carousel-dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex justify-center gap-4 mt-6"></div>
 </div>
-
-<div id="carousel-dots" class="flex justify-center gap-4 mt-6"></div>
-                <!-- Projets -->
+        <!-- Projets -->
             </section>
                 <div class="max-w-7xl w-full mx-auto flex flex-col flex-grow space-y-8 min-h-0">
             <section class="grid grid-cols-1 md:grid-cols-3 gap-10">
