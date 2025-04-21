@@ -299,6 +299,11 @@
         }
         document.getElementById('next').addEventListener('click', () => showSlide((index + 1) % slides.length));
         document.getElementById('prev').addEventListener('click', () => showSlide((index - 1 + slides.length) % slides.length));
+
+        // Changement automatique de slide toutes les 30 secondes
+        setInterval(() => {
+            showSlide((index + 1) % slides.length);
+        }, 15000);
     </script>
     <script>
         // Drag to scroll for formation section
