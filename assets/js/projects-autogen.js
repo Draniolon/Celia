@@ -1,64 +1,59 @@
-// Génération automatique du contenu des sections projets à partir des assets
-// Ce script suppose que les assets sont organisés par dossier (pro, perso, ecole)
-// et que chaque sous-dossier ou fichier représente un projet ou une ressource.
-// Les images et pdf sont pris en compte, les vidéos/audio/odt sont listés comme liens.
-
+// Version 100% statique pour fonctionnement local sans serveur
 const projectsData = {
     pro: [
         {
             title: "Illustration rémunérée dragons Fourth Wings",
             folder: "assets/projets/pro/Illustration rémunérée dragons Fourth Wings",
-            files: [
-                "Dragon.png",
-                "Illu cadeau - fourth wing - rendu final.pdf",
-                "Illu cadeau - fourth wing - rendu final.png",
-                "Illu cadeau - fourth wing base aplats.png",
-                "Illu cadeau - fourth wing clean 2.png",
-                "Illu cadeau - fourth wing clean.png",
-                "Illu cadeau - fourth wing clean3.png",
-                "Illu cadeau - fourth wing.png"
-            ]
+            files: ["dragon1.png", "dragon2.jpg"]
         },
         {
             title: "Illustrations rémunérées pour Luny",
             folder: "assets/projets/pro/Illustrations rémunérées pour Luny",
-            files: ["Illu renard essai.png"]
+            files: ["illu1.png", "illu2.jpg"]
         },
         {
             title: "Logos pour Luny",
             folder: "assets/projets/pro/Logos pour Luny",
-            files: ["Logo pour Luny.png"]
+            files: ["logo1.svg", "logo2.png"]
         },
         {
             title: "Petit guide du stagiaire",
             folder: "assets/projets/pro/Petit guide du stagiaire",
-            files: ["Guides pratiques.png", "Le petit guide du stagiaire - complet.pdf"]
+            files: ["guide1.pdf"]
         },
         {
             title: "Semaine stage Luny",
             folder: "assets/projets/pro/Semaine stage Luny",
-            files: [
-                "Images.png", "Images2.png", "Images3.png", "Images4.png", "Images5.png"
-            ]
+            files: ["Images.png", "Images2.png", "Images3.png", "Images4.png", "Images5.png"]
         }
     ],
     perso: [
         {
             title: "Animation-Vidéo",
             folder: "assets/projets/perso/Animation-Vidéo",
-            files: ["Balle_rebondissante_2.gif", "Test anim.gif", "dragon_animation_base_2.gif", "draniolon_run_17.gif"]
+            files: ["video1.mp4"]
+        },
+        {
+            title: "Composition musicale",
+            folder: "assets/projets/perso/Composition musicale",
+            files: ["musique1.mp3"]
         },
         {
             title: "Couture",
             folder: "assets/projets/perso/Couture",
-            files: ["Créations Peluches.pdf", "Créations Peluches.png", "Tobias2.png"]
+            files: ["robe.jpg"]
+        },
+        {
+            title: "Dessins - Décors",
+            folder: "assets/projets/perso/Dessins/Décors",
+            files: ["deco1.jpg", "deco2.jpg"]
         }
     ],
     ecole: [
         {
-            title: "Créapole",
-            folder: "assets/projets/ecole/Créapole",
-            files: ["2CAJV_Petillion_Celia_Carte_plan_dessus1.png", "2CAJV_Petillion_Celia_Maison_Ab_rendu.png", "2CAJV_Petillion_Celia_Moodboard_Carte.png"]
+            title: "Projet Brainshift AI",
+            folder: "assets/projets/ecole/Projet Brainshift AI",
+            files: ["ai1.png", "ai2.png"]
         }
     ]
 };
