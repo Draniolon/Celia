@@ -300,16 +300,20 @@
 
         // Génère les dots dynamiquement
         function renderDots() {
-            dotsContainer.innerHTML = '';
-            slides.forEach((_, i) => {
-                const dot = document.createElement('button');
-                dot.className = `w-4 h-4 rounded-full border border-white bg-white/60 transition-colors duration-200`;
-                dot.setAttribute('data-index', i);
-                if (i === 0) dot.classList.add('bg-white');
-                dot.addEventListener('click', () => showSlide(i));
-                dotsContainer.appendChild(dot);
-            });
-        }
+    dotsContainer.innerHTML = '';
+    slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = `w-4 h-4 rounded-full border border-white bg-white/60 transition-colors duration-200`;
+        dot.setAttribute('data-index', i);
+        dot.addEventListener('click', () => showSlide(i));
+        dotsContainer.appendChild(dot);
+    });
+    // Forcer le premier dot à être blanc
+    if (dotsContainer.children.length > 0) {
+        dotsContainer.children[0].classList.add('bg-white');
+        dotsContainer.children[0].classList.remove('bg-white/60');
+    }
+}
 
         // Affiche uniquement la première slide au chargement
         slides.forEach((s, idx) => s.classList.toggle('active', idx === 0));
