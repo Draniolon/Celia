@@ -45,9 +45,15 @@
         }
 
         .tooltip-bulle {
-            @apply absolute left-1/2 -translate-x-1/2 -top-3.5 -mt-1 px-2 py-1 rounded bg-[#2bb8b8] text-white text-xs opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap;
-            z-index: 9999 !important;
-        }
+    @apply absolute left-1/2 -translate-x-1/2 px-2 py-1 rounded bg-[#2bb8b8] text-white text-xs opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap;
+    z-index: 9999 !important;
+}
+.tooltip-bulle:not(.top-full) {
+    @apply -top-3.5 -mt-1;
+}
+.tooltip-bulle.top-full {
+    @apply top-full mt-2;
+}
     </style>
 </head>
 <body class="min-h-screen flex flex-col bg-[#2bb8b8] text-white font-['Roboto',sans-serif]" style="overflow:visible;">
@@ -149,7 +155,7 @@
                 <div class="relative flex flex-col items-center group">
                     <div class="bg-white/30 rounded-xl p-6 flex flex-col mb-0 mt-28 relative transition-colors duration-200 group-hover:bg-white/50">
                         <span class="text-lg font-bold text-white">2019-2021</span>
-                        <span class="tooltip-bulle top-full mt-2">Bachelor création et design – Créapole – Paris</span>
+                        <span class="tooltip-bulle top-full mt-2 z-50" style="z-index:9999;">Bachelor création et design – Créapole – Paris</span>
                     </div>
                 </div>
                 <!-- 3: Haut -->
