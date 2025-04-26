@@ -1,5 +1,104 @@
-// Version 100% statique pour fonctionnement local sans serveur
-const projectsData = {
+// Structure dynamique avec catégories statiques et toggles interactifs
+
+const categories = [
+  {
+    key: 'pro',
+    title: 'Pro',
+    image: 'assets/img/pro.png', // à remplacer par ta miniature
+    subcategories: [
+      {
+        key: 'logos',
+        title: 'Logos',
+        image: 'assets/projets/pro/Logos/miniature.png', // à remplacer
+        projects: [
+          // Liste des projets/fichiers pour Logos
+          'Logo pour Luny',
+          'Logo pour Entreprise X',
+        ]
+      },
+      {
+        key: 'illustrations',
+        title: 'Illustrations',
+        image: 'assets/projets/pro/Illustrations/miniature.png', // à remplacer
+        projects: [
+          'Illustration rémunérée dragons Fourth Wings',
+          'Illustrations rémunérées pour Luny',
+        ]
+      },
+      {
+        key: 'reseau',
+        title: 'Réseau Sociaux',
+        image: 'assets/projets/pro/Reseau_Sociaux/miniature.png',
+        projects: [
+          'Post Instagram',
+          'Bannière Facebook',
+        ]
+      }
+      // ... autres sous-catégories
+    ]
+  },
+  // Ajoute ici les autres catégories (perso, ecole, etc.)
+];
+
+function renderCategories() {
+  const container = document.getElementById('categories-container');
+  container.innerHTML = '';
+  categories.forEach(cat => {
+    // Catégorie principale (image + titre)
+    const catDiv = document.createElement('div');
+    catDiv.className = 'category-block flex flex-col items-center my-8';
+    const img = document.createElement('img');
+    img.src = cat.image;
+    img.alt = cat.title;
+    img.className = 'category-img cursor-pointer w-48 h-48 object-cover rounded-full shadow-lg mb-4';
+    // Titre H1 (caché par défaut)
+    const h1 = document.createElement('h1');
+    h1.textContent = cat.title;
+    h1.className = 'category-title text-4xl font-bold my-4 hidden';
+    // Grille des bulles (cachée par défaut)
+    const grid = document.createElement('div');
+    grid.className = 'subcategory-grid grid grid-cols-2 md:grid-cols-3 gap-8 justify-center hidden';
+    // Génère les bulles
+    cat.subcategories.forEach(sub => {
+      const bubble = document.createElement('div');
+      bubble.className = 'subcategory-bubble flex flex-col items-center justify-center w-40 h-40 rounded-full bg-gray-100 shadow-lg cursor-pointer transition hover:bg-blue-200';
+      // H2 centré
+      const h2 = document.createElement('h2');
+      h2.textContent = sub.title;
+      h2.className = 'text-xl font-semibold text-center';
+      bubble.appendChild(h2);
+      // Liste des projets (cachée par défaut)
+      const projList = document.createElement('ul');
+      projList.className = 'project-list mt-4 hidden';
+      sub.projects.forEach(proj => {
+        const li = document.createElement('li');
+        li.textContent = proj;
+        li.className = 'text-base text-gray-700 py-1';
+        projList.appendChild(li);
+      });
+      bubble.appendChild(projList);
+      // Toggle sur la bulle
+      bubble.addEventListener('click', (e) => {
+        e.stopPropagation();
+        projList.classList.toggle('hidden');
+      });
+      grid.appendChild(bubble);
+    });
+    // Toggle sur l’image de catégorie
+    img.addEventListener('click', () => {
+      h1.classList.toggle('hidden');
+      grid.classList.toggle('hidden');
+    });
+    catDiv.appendChild(img);
+    catDiv.appendChild(h1);
+    catDiv.appendChild(grid);
+    container.appendChild(catDiv);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', renderCategories);
+// Ajoute un div id="categories-container" dans ton HTML là où tu veux afficher les catégories
+
     pro: [
         {
             title: "Illustration rémunérée dragons Fourth Wings",
