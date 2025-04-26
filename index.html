@@ -78,6 +78,15 @@
 </head>
 
 <body class="min-h-screen flex flex-col bg-[#2bb8b8] text-white font-['Roboto',sans-serif]" style="overflow:visible;">
+    <!-- Lang Switcher -->
+    <div class="fixed top-4 left-4 z-50 flex gap-2">
+    <a href="https://www.google.fr" target="_blank" rel="noopener noreferrer">
+        <img src="./assets/images/profil/fr.png" alt="Français" class="w-8 h-8 object-cover rounded" style="box-shadow:none;border-bottom:none;background:transparent" />
+    </a>
+    <a href="https://www.google.fr" target="_blank" rel="noopener noreferrer">
+        <img src="./assets/images/profil/uk.png" alt="English" class="w-8 h-8 object-cover rounded" style="box-shadow:none;border-bottom:none;background:transparent" />
+    </a>
+</div>
     <main class="flex-grow flex flex-col items-center justify-center min-h-0 py-8 px-0" style="overflow:visible;">
         <div class="max-w-7xl w-full mx-auto flex flex-col flex-grow space-y-8 min-h-0">
             <!-- Carousel -->
@@ -128,7 +137,7 @@
                         <div class="flex flex-col md:flex-row justify-center">
                             <div class="mx-auto">
                                 <h2 class="text-4xl font-bold text-center mb-2">LOGICIELS</h2>
-                                <div class="grid grid-cols-4 gap-6 mt-10 mb-0">
+                                <div class="grid grid-cols-4 gap-4 mt-10 mb-0">
                                     <div class="logo-box group relative"><img
                                             src="assets/images/competences/indesign.png" alt="InDesign"
                                             class="w-14 h-14"><span class="tooltip-bulle">InDesign</span></div>
@@ -170,7 +179,7 @@
                             </div>
                             <div class="mx-auto">
                                 <h2 class="text-4xl font-bold text-center mb-2">COMPÉTENCES</h2>
-                                <div class="grid grid-cols-4 gap-6 mt-10 mb-0">
+                                <div class="grid grid-cols-4 gap-4 mt-10 mb-0">
                                     <div class="logo-box group relative"><i
                                             class="fas fa-ruler-combined text-4xl"></i><span
                                             class="tooltip-bulle">Rigueur</span></div>
@@ -220,37 +229,33 @@
                                 <!-- 1: Haut -->
                                 <div class="relative flex flex-col items-center group">
                                     <div
-                                        class="bg-white/30 rounded-xl p-6 flex flex-col -mt-24 relative transition-colors duration-200 group-hover:bg-white/50">
-                                        <span class="text-lg font-bold text-white">2017-2019</span>
-                                        <span class="tooltip-bulle">Bac Littéraire – Lycée La Bruyère – Option Arts
-                                            Plastiques</span>
+                                        class="bg-white/30 rounded-xl p-4 flex flex-col -mt-32 relative transition-colors duration-200 group-hover:bg-white/50 w-52 md:w-60 items-center">
+                                        <span class="text-xl text-white text-center">Lycée La Bruyère<br><span class="text-sm font-normal">2017-2019</span></span>
+<span class="text-sm font-normal text-center">Bac Littéraire<br>Option Arts Plastiques</span>
                                     </div>
                                 </div>
                                 <!-- 2: Bas -->
                                 <div class="relative flex flex-col items-center group">
                                     <div
-                                        class="bg-white/30 rounded-xl p-6 flex flex-col mb-0 mt-28 relative transition-colors duration-200 group-hover:bg-white/50">
-                                        <span class="text-lg font-bold text-white">2019-2021</span>
-                                        <span class="tooltip-bulle top-full mt-2 z-50" style="z-index:9999;">Bachelor
-                                            création et design – Créapole – Paris</span>
+                                        class="bg-white/30 rounded-xl p-4 flex flex-col mb-0 mt-36 relative transition-colors duration-200 group-hover:bg-white/50 w-52 md:w-60 items-center">
+                                        <span class="text-xl text-white text-center">Créapole<br><span class="text-sm font-normal">2019-2021</span></span>
+<span class="text-sm font-normal text-center">Bachelor création et design</span>
                                     </div>
                                 </div>
                                 <!-- 3: Haut -->
                                 <div class="relative flex flex-col items-center group">
                                     <div
-                                        class="bg-white/30 rounded-xl p-6 flex flex-col -mt-24 relative transition-colors duration-200 group-hover:bg-white/50">
-                                        <span class="text-lg font-bold text-white">2021-2022</span>
-                                        <span class="tooltip-bulle">Formation d’écrivain public - CNED - Formation à
-                                            distance</span>
+                                        class="bg-white/30 rounded-xl p-4 flex flex-col -mt-32 relative transition-colors duration-200 group-hover:bg-white/50 w-52 md:w-60 items-center">
+                                        <span class="text-xl text-white text-center">CNED<br><span class="text-sm font-normal">2021-2022</span></span>
+<span class="text-sm font-normal text-center">Formation d’écrivain public</span>
                                     </div>
                                 </div>
                                 <!-- 4: Bas -->
                                 <div class="relative flex flex-col items-center group">
                                     <div
-                                        class="bg-white/30 rounded-xl p-6 flex flex-col mb-0 mt-28 relative transition-colors duration-200 group-hover:bg-white/50">
-                                        <span class="text-lg font-bold text-white">2023-2026</span>
-                                        <span class="tooltip-bulle top-full mt-2 z-50" style="z-index:9999;">École
-                                            supérieure de graphisme - Garti - Neuilly-sur-Seine</span>
+                                        class="bg-white/30 rounded-xl p-4 flex flex-col mb-0 mt-36 relative transition-colors duration-200 group-hover:bg-white/50 w-52 md:w-60 items-center">
+                                        <span class="text-xl text-white text-center">Garti<br><span class="text-sm font-normal">2023-2026</span></span>
+<span class="text-sm font-normal text-center">École supérieure de graphisme</span>
                                     </div>
                                 </div>
                             </div>
@@ -258,13 +263,14 @@
                     </div>
                     <!-- Slide 4: Mes recommandations -->
                     <div class="slide slide-box">
-                        <h2 class="text-4xl font-bold text-center mb-6">Mes recommandations</h2>
+                        <h2 class="text-4xl font-bold text-center mb-6">RECOMMANDATIONS</h2>
                         <div class="flex-1 flex justify-center items-center w-full">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 justify-items-center">
                                 <!-- Recommandation 1 -->
                                 <div
                                     class="contact-tile group relative flex flex-col items-center justify-center h-full gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all cursor-pointer w-[400px] h-[280px] bg-white/20 text-center">
                                     <span class="text-2xl font-semibold">Luny Asthiers</span>
+<span class="text-lg font-medium mt-0.5">Cliente freelance</span>
                                     <a href="assets/recommandations/Lettre de recommandation - Luny Asthiers.pdf"
                                         target="_blank" rel="noopener noreferrer"
                                         class="text-[1.35rem] opacity-100 text-white border border-white px-4 py-2 rounded-full mt-2 transition-colors hover:bg-[#8eddd4] self-center">
@@ -275,6 +281,7 @@
                                 <div
                                     class="contact-tile group relative flex flex-col items-center justify-center h-full gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all cursor-pointer w-[400px] h-[280px] bg-white/20 text-center">
                                     <span class="text-2xl font-semibold">Mairie de Neuilly</span>
+<span class="text-lg font-medium mt-0.5">Stage</span>
                                     <a href="assets/recommandations/Lettre de recommandation de la mairie.pdf"
                                         target="_blank" rel="noopener noreferrer"
                                         class="text-[1.35rem] opacity-100 text-white border border-white px-4 py-2 rounded-full mt-2 transition-colors hover:bg-[#8eddd4] self-center">
@@ -286,7 +293,7 @@
                     </div>
                     <!-- Slide 5: Contact -->
                     <div class="slide slide-box">
-                        <h2 class="text-4xl font-bold text-center mb-6">CONTACT</h2>
+                        <h2 class="text-4xl font-bold text-center mb-6">CONTACTS</h2>
                         <div class="flex-1 flex justify-center items-center">
                             <div class="grid grid-cols-3 gap-12 justify-items-center">
                                 <div
