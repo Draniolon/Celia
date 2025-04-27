@@ -135,7 +135,7 @@
             min-width: 200px;
             clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
         }
-.trapeze-content.right {
+        .trapeze-content.right {
             border-radius: 1.5rem 0 0 1.5rem;
             margin-left: 0;
             margin-right: -2rem;
@@ -630,27 +630,12 @@
             const section = sectionData[sectionKey];
             if (!section) return;
 
-            // Descriptions fictives pour chaque h2
-            const descriptions = {
-                "Publicité": "Créations graphiques pour des marques, affiches et campagnes publicitaires.",
-                "Exercices": "Exercices de style et d’apprentissage du graphisme.",
-                "Animations": "Animations 2D/3D réalisées pour explorer le mouvement et la narration visuelle.",
-                "Compositions musicales": "Compositions et arrangements originaux, explorant différents styles musicaux.",
-                "Coutures": "Créations textiles et projets de couture faits main.",
-                "Dessins": "Dessins traditionnels et numériques, croquis et illustrations.",
-                "Ecriture": "Textes, nouvelles et projets d’écriture créative.",
-                "Couverture de Livre": "Designs de couvertures pour des ouvrages littéraires.",
-                "Illustrations": "Illustrations réalisées pour des clients ou des projets personnels.",
-                "Logos": "Création de logos pour des entreprises ou des événements.",
-            };
-
             let html = '';
             let catIndex = 0;
             Object.keys(section.h2).forEach((h2, idx) => {
                 const h3s = section.h2[h2];
                 html += `
-                <h2 class="text-2xl font-bold text-black mb-4">${h2}</h2>
-                <p class="text-lg text-black/60 mb-8">${descriptions[h2]}</p>
+                <h2 class="text-2xl font-bold text-white text-opacity-70 mb-4 text-center">${h2}</h2>
                 `;
                 h3s.forEach((h3, idx) => {
                     const isEven = (catIndex + idx) % 2 === 0;
