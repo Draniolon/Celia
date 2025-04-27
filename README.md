@@ -22,7 +22,7 @@ Portfolio interactif et créatif présentant mon parcours, mes compétences, mes
 - JavaScript
 
 ## Aperçu de l’interface
-<img src="./assets/images/github/portfolio-ui.png" alt="Aperçu Portfolio Celia" />
+<img src="./assets/images/github/UI.png" alt="Aperçu Portfolio Celia" />
 
 ## Auteur
 - [Célia Pétillion](https://www.linkedin.com/in/célia-pétillion/)

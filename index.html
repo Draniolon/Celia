@@ -24,6 +24,15 @@
         .carousel-ctrl {
     @apply absolute top-1/2 -translate-y-1/2 w-14 h-14 bg-white/80 rounded-full flex items-center justify-center hover:scale-110 transition z-50;
 }
+
+/* Effet hover sur les drapeaux de langue */
+#flag-fr, #flag-en {
+    transition: transform 0.2s cubic-bezier(.4,2,.6,1);
+}
+#flag-fr:hover, #flag-en:hover {
+    transform: scale(1.25);
+    z-index: 10;
+}
 .arrow-anim {
     display: inline-block;
 }

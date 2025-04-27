@@ -53,9 +53,23 @@ const translations = {
     }
 };
 
-// Pour mémoriser les textes originaux
-let originalTexts = [];
-let originalAlts = [];
+// Stockage des textes originaux
+const originalTexts = [];
+const originalAlts = [];
+
+// Initialisation des textes originaux au chargement de la page
+window.addEventListener('DOMContentLoaded', () => {
+    // Stocke tous les textes
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    let n;
+    while ((n = walker.nextNode())) {
+        originalTexts.push(n.nodeValue);
+    }
+    // Stocke tous les alt d'images
+    document.querySelectorAll('img[alt]').forEach((img) => {
+        originalAlts.push(img.alt);
+    });
+});
 
 function translateTo(lang = 'en') {
     const t = translations[lang];
@@ -64,7 +78,7 @@ function translateTo(lang = 'en') {
     let node;
     let i = 0;
     if (lang === 'en') {
-        // Stocke les textes originaux la première fois
+        // Toujours stocker les textes originaux si non déjà fait
         if (originalTexts.length === 0) {
             let n;
             while ((n = walker.nextNode())) {
@@ -73,6 +87,12 @@ function translateTo(lang = 'en') {
         } else {
             // Réinitialise le walker
             walker.currentNode = document.body;
+        }
+        // Toujours stocker les alt originaux si non déjà fait
+        if (originalAlts.length === 0) {
+            document.querySelectorAll('img[alt]').forEach((img) => {
+                originalAlts.push(img.alt);
+            });
         }
         // Applique la traduction
         while ((node = walker.nextNode())) {
