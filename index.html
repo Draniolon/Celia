@@ -22,52 +22,52 @@
         }
 
         .carousel-ctrl {
-    @apply absolute top-1/2 -translate-y-1/2 w-14 h-14 bg-white/80 rounded-full flex items-center justify-center hover:scale-110 transition z-50;
-}
+            @apply absolute top-1/2 -translate-y-1/2 w-14 h-14 bg-white/80 rounded-full flex items-center justify-center hover:scale-110 transition z-50;
+        }
 
-/* Effet hover sur les drapeaux de langue */
-#flag-fr, #flag-en {
-    transition: transform 0.2s cubic-bezier(.4,2,.6,1);
-    position: relative;
-}
+        /* Effet hover sur les drapeaux de langue */
+        #flag-fr, #flag-en {
+            transition: transform 0.2s cubic-bezier(.4,2,.6,1);
+            position: relative;
+        }
 
-.flag-wrapper.flag-active::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -4px;
-    height: 3px;
-    border-radius: 2px;
-    background: rgba(255,255,255,0.85);
-    opacity: 0.5;
-    pointer-events: none;
-    z-index: 20;
-}
-#flag-fr:hover, #flag-en:hover {
-    transform: scale(1.25);
-    z-index: 10;
-}
-.arrow-anim {
-    display: inline-block;
-}
-.arrow-anim.left {
-    animation: arrow-float-x-left 6s ease-in-out infinite alternate;
-}
-.arrow-anim.right {
-    animation: arrow-float-x-right 6s ease-in-out infinite alternate;
-}
-@keyframes arrow-float-x-left {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(-8px); }
-    100% { transform: translateX(0); }
-}
-@keyframes arrow-float-x-right {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(8px); }
-    100% { transform: translateX(0); }
-}
+        .flag-wrapper.flag-active::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -4px;
+            height: 3px;
+            border-radius: 2px;
+            background: rgba(255,255,255,0.85);
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 20;
+        }
+        #flag-fr:hover, #flag-en:hover {
+            transform: scale(1.25);
+            z-index: 10;
+        }
+        .arrow-anim {
+            display: inline-block;
+        }
+        .arrow-anim.left {
+            animation: arrow-float-x-left 6s ease-in-out infinite alternate;
+        }
+        .arrow-anim.right {
+            animation: arrow-float-x-right 6s ease-in-out infinite alternate;
+        }
+        @keyframes arrow-float-x-left {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-8px); }
+            100% { transform: translateX(0); }
+        }
+        @keyframes arrow-float-x-right {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(8px); }
+            100% { transform: translateX(0); }
+        }
 
         .carousel-ctrl i {
             @apply text-[#2bb8b8] text-2xl font-bold;
@@ -81,9 +81,9 @@
             @apply absolute top-0 left-0 w-full h-full min-h-[500px] opacity-0 pointer-events-none transition-opacity duration-500;
         }
 
-            .slide.active {
-                @apply opacity-100 pointer-events-auto relative;
-            }
+        .slide.active {
+            @apply opacity-100 pointer-events-auto relative;
+        }
 
         .slides {
             @apply relative min-h-[500px];
@@ -98,20 +98,20 @@
         }
         .tooltip-bulle.top-full {
             @apply top-full mt-2;
-}
+        }
     </style>
 </head>
 
 <body class="min-h-screen flex flex-col bg-[#2bb8b8] text-white font-['Roboto',sans-serif]" style="overflow:visible;">
     <!-- Lang Switcher -->
     <div class="fixed top-4 left-4 z-50 flex gap-2">
-    <span id="flag-fr" class="flag-wrapper" style="display:inline-block;position:relative;cursor:pointer;">
-      <img src="./assets/images/profil/fr.png" alt="Français" class="w-8 h-8 object-cover rounded" style="box-shadow:none;border-bottom:none;background:transparent; cursor:pointer;" />
-    </span>
-    <span id="flag-en" class="flag-wrapper" style="display:inline-block;position:relative;cursor:pointer;">
-      <img src="./assets/images/profil/uk.png" alt="English" class="w-8 h-8 object-cover rounded" style="box-shadow:none;border-bottom:none;background:transparent; cursor:pointer;" />
-    </span>
-</div>
+        <span id="flag-fr" class="flag-wrapper" style="display:inline-block;position:relative;cursor:pointer;">
+            <img src="./assets/images/profil/fr.png" alt="Français" class="w-8 h-8 object-cover rounded" style="box-shadow:none;border-bottom:none;background:transparent; cursor:pointer;" />
+        </span>
+        <span id="flag-en" class="flag-wrapper" style="display:inline-block;position:relative;cursor:pointer;">
+            <img src="./assets/images/profil/uk.png" alt="English" class="w-8 h-8 object-cover rounded" style="box-shadow:none;border-bottom:none;background:transparent; cursor:pointer;" />
+        </span>
+    </div>
     <main class="flex-grow flex flex-col items-center justify-center min-h-0 py-8 px-0" style="overflow:visible;">
         <div class="max-w-7xl w-full mx-auto flex flex-col flex-grow space-y-8 min-h-0">
             <!-- Carousel -->
@@ -252,7 +252,7 @@
                                     <div
                                         class="bg-white/30 rounded-xl p-4 flex flex-col -mt-32 relative transition-colors duration-200 group-hover:bg-white/50 w-52 md:w-60 items-center">
                                         <span class="text-xl text-white text-center">Lycée La Bruyère<br><span class="text-sm font-normal">2017-2019</span></span>
-<span class="text-sm font-normal text-center">Bac Littéraire<br>Option Arts Plastiques</span>
+                                        <span class="text-sm font-normal text-center">Bac Littéraire<br>Option Arts Plastiques</span>
                                     </div>
                                 </div>
                                 <!-- 2: Bas -->
@@ -260,7 +260,7 @@
                                     <div
                                         class="bg-white/30 rounded-xl p-4 flex flex-col mb-0 mt-36 relative transition-colors duration-200 group-hover:bg-white/50 w-52 md:w-60 items-center">
                                         <span class="text-xl text-white text-center">Créapole<br><span class="text-sm font-normal">2019-2021</span></span>
-<span class="text-sm font-normal text-center">Bachelor création et design</span>
+                                        <span class="text-sm font-normal text-center">Bachelor création et design</span>
                                     </div>
                                 </div>
                                 <!-- 3: Haut -->
@@ -268,7 +268,7 @@
                                     <div
                                         class="bg-white/30 rounded-xl p-4 flex flex-col -mt-32 relative transition-colors duration-200 group-hover:bg-white/50 w-52 md:w-60 items-center">
                                         <span class="text-xl text-white text-center">CNED<br><span class="text-sm font-normal">2021-2022</span></span>
-<span class="text-sm font-normal text-center">Formation d’écrivain public</span>
+                                        <span class="text-sm font-normal text-center">Formation d’écrivain public</span>
                                     </div>
                                 </div>
                                 <!-- 4: Bas -->
@@ -276,7 +276,7 @@
                                     <div
                                         class="bg-white/30 rounded-xl p-4 flex flex-col mb-0 mt-36 relative transition-colors duration-200 group-hover:bg-white/50 w-52 md:w-60 items-center">
                                         <span class="text-xl text-white text-center">Garti<br><span class="text-sm font-normal">2023-2026</span></span>
-<span class="text-sm font-normal text-center">École supérieure de graphisme</span>
+                                        <span class="text-sm font-normal text-center">École supérieure de graphisme</span>
                                     </div>
                                 </div>
                             </div>
@@ -291,7 +291,7 @@
                                 <div
                                     class="contact-tile group relative flex flex-col items-center justify-center h-full gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all cursor-pointer w-[400px] h-[280px] bg-white/20 text-center">
                                     <span class="text-2xl font-semibold">Luny Asthiers</span>
-<span class="text-lg font-medium mt-0.5">Cliente freelance</span>
+                                    <span class="text-lg font-medium mt-0.5">Cliente freelance</span>
                                     <a href="assets/recommandations/Lettre de recommandation - Luny Asthiers.pdf"
                                         target="_blank" rel="noopener noreferrer"
                                         class="text-[1.35rem] opacity-100 text-white border border-white px-4 py-2 rounded-full mt-2 transition-colors hover:bg-[#8eddd4] self-center">
@@ -302,7 +302,7 @@
                                 <div
                                     class="contact-tile group relative flex flex-col items-center justify-center h-full gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all cursor-pointer w-[400px] h-[280px] bg-white/20 text-center">
                                     <span class="text-2xl font-semibold">Mairie de Neuilly</span>
-<span class="text-lg font-medium mt-0.5">Stage</span>
+                                    <span class="text-lg font-medium mt-0.5">Stage</span>
                                     <a href="assets/recommandations/Lettre de recommandation de la mairie.pdf"
                                         target="_blank" rel="noopener noreferrer"
                                         class="text-[1.35rem] opacity-100 text-white border border-white px-4 py-2 rounded-full mt-2 transition-colors hover:bg-[#8eddd4] self-center">
@@ -357,7 +357,7 @@
                             class="absolute bottom-6 left-1/2 -translate-x-1/2 pointer-events-none text-2xl font-bold uppercase text-white drop-shadow-lg transition-transform group-hover:scale-105 text-center whitespace-nowrap overflow-x-auto">
                             Projets Professionnels</div>
                     </div>
-                    <div class="project-card" data-project="scolaire">
+                    <div class="project-card" data-project="ecole">
                         <img src="assets/images/profil/scolair.png" alt="Projet scolaire"
                             class="w-full max-w-[800px] max-h-[600px] aspect-[4/3] rounded-lg cursor-pointer object-cover object-top" />
                         <div
@@ -377,15 +377,17 @@
                 <div class="project-details hidden" id="pro-details">
                     <div class="w-full h-1 bg-white/50 my-8"></div>
                     <h3 class="text-3xl font-bold text-center mb-8">Projets Professionnels</h3>
+                    <div class="section-structure" id="pro-structure"></div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <!-- Ajoutez vos projets professionnels ici -->
                     </div>
                     <div class="w-full h-1 bg-white/50 my-8"></div>
                 </div>
 
-                <div class="project-details hidden" id="scolaire-details">
+                <div class="project-details hidden" id="ecole-details">
                     <div class="w-full h-1 bg-white/50 my-8"></div>
                     <h3 class="text-3xl font-bold text-center mb-8">Projets Scolaires</h3>
+                    <div class="section-structure" id="ecole-structure"></div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <!-- Ajoutez vos projets scolaires ici -->
                     </div>
@@ -395,6 +397,7 @@
                 <div class="project-details hidden" id="perso-details">
                     <div class="w-full h-1 bg-white/50 my-8"></div>
                     <h3 class="text-3xl font-bold text-center mb-8">Projets Personnels</h3>
+                    <div class="section-structure" id="perso-structure"></div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <!-- Ajoutez vos projets personnels ici -->
                     </div>
@@ -403,7 +406,7 @@
             </div>
     </main>
     <footer class="w-full text-center text-white/70 py-0 text-sm select-none -mt-6">
-        <strong>© Célia Pétillion, tous droits réservés. Design et contenu protégés.</strong>
+        <strong> Célia Pétillion, tous droits réservés. Design et contenu protégés.</strong>
     </footer>
     <script src="assets/js/projects-autogen.js"></script>
     <script>
@@ -515,27 +518,84 @@
             });
         });
     </script>
-<script src="translate.js"></script>
-<script>
-  function setActiveFlag(flag) {
-    document.getElementById('flag-fr').classList.add('flag-active');
-    document.getElementById('flag-en').classList.remove('flag-active');
-    if(flag === 'flag-en') {
-      document.getElementById('flag-fr').classList.remove('flag-active');
-      document.getElementById('flag-en').classList.add('flag-active');
-    }
-  }
-  document.getElementById('flag-fr').addEventListener('click', function() {
-    translateTo('fr');
-    setActiveFlag('flag-fr');
-  });
-  document.getElementById('flag-en').addEventListener('click', function() {
-    translateTo('en');
-    setActiveFlag('flag-en');
-  });
-  // Initialisation : activer le drapeau FR par défaut
-  setActiveFlag('flag-fr');
-</script>
+    <script src="translate.js"></script>
+    <script>
+        function setActiveFlag(flag) {
+            document.getElementById('flag-fr').classList.add('flag-active');
+            document.getElementById('flag-en').classList.remove('flag-active');
+            if (flag === 'flag-en') {
+                document.getElementById('flag-fr').classList.remove('flag-active');
+                document.getElementById('flag-en').classList.add('flag-active');
+            }
+        }
+        document.getElementById('flag-fr').addEventListener('click', function () {
+            translateTo('fr');
+            setActiveFlag('flag-fr');
+        });
+        document.getElementById('flag-en').addEventListener('click', function () {
+            translateTo('en');
+            setActiveFlag('flag-en');
+        });
+        // Initialisation : activer le drapeau FR par défaut
+        setActiveFlag('flag-fr');
+    </script>
+    <script>
+        // Structure des sections, h2 et h3
+        const sectionData = {
+            ecole: {
+                h1: "Projets Scolaires",
+                h2: {
+                    "Publicité": ["Cannettes Smile", "Chocolat Carmen", "Kleneex", "Swaroski"],
+                    "Exercices": ["Depliant", "Portrait Chinois"]
+                }
+            },
+            perso: {
+                h1: "Projets Personnels",
+                h2: {
+                    "Animations": ["Balle rembondissante", "Dragon Animation", "Test Animation"],
+                    "Compositions musicales": ["Lurking in the snow FINAL", "Something yet not so much", "First attempt"],
+                    "Coutures": ["Cousin", "Tobias", "Yoslan"],
+                    "Dessins": ["Pokemon", "Horloge", "Moustache"],
+                    "Ecriture": ["Zelda", "Pokemon", "Abhosia", "Murphy"]
+                }
+            },
+            pro: {
+                h1: "Projets Professionnels",
+                h2: {
+                    "Couverture de Livre": ["Le printemps renait toujours", "Couverture livre mockup"],
+                    "Illustrations": ["freelance_fourth_wing", "luny_Illu_renard"],
+                    "Logos": ["Logo_pour_Luny"],
+                    "Reseau Sociaux": ["Post Wandel", "Hamlet", "Harry Potter"],
+                    "Tutoriel": ["Petit Guide du Stagiaire"]
+                }
+            }
+        };
+
+        function renderSectionStructure(sectionKey) {
+            // Vide tous les containers
+            document.querySelectorAll('.section-structure').forEach(div => div.innerHTML = '');
+            const section = sectionData[sectionKey];
+            if (!section) return;
+            let html = '';
+            Object.entries(section.h2).forEach(([h2, h3s]) => {
+                html += `<h4 class='text-xl font-semibold mt-4 mb-2'>${h2}</h4><ul class='mb-2 ml-4'>`;
+                h3s.forEach(h3 => {
+                    html += `<li class='text-base ml-2'>${h3}</li>`;
+                });
+                html += `</ul>`;
+            });
+            document.getElementById(sectionKey+"-structure").innerHTML = html;
+        }
+        // Ajoute l'écouteur sur les images de section (pro, perso, ecole)
+        document.querySelectorAll('.project-card[data-project]').forEach(card => {
+            card.addEventListener('click', function (e) {
+                const sectionKey = card.dataset.project;
+                if (sectionData[sectionKey]) {
+                    renderSectionStructure(sectionKey);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
