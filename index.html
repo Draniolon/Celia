@@ -147,14 +147,15 @@
             padding: 2rem 2rem 2rem 2rem;
             margin-left: -2rem;
             min-width: 200px;
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+            /* Côté gauche biseauté, côté droit vertical */
+            clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
         }
         .trapeze-content.right {
             border-radius: 1.5rem 0 0 1.5rem;
             margin-left: 0;
             margin-right: -2rem;
-            /* Côté gauche droit, côté droit biseauté */
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+            /* Côté gauche vertical, côté droit biseauté */
+            clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
         }
         @media (max-width: 700px) {
         .trapeze-row { flex-direction: column; }
