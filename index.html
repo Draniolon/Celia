@@ -103,11 +103,11 @@
             display: flex;
             align-items: stretch;
             margin-bottom: 2rem;
-            min-height: 170px;
+            min-height: 210px;
             transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
         }
         .trapeze-row:hover {
-            transform: scale(1.04);
+            transform: scale(1.04,1.13);
             box-shadow: 0 8px 32px 0 #0003;
         }
         .trapeze-img, .trapeze-content {
@@ -619,21 +619,56 @@
             perso: {
                 h1: "Projets Personnels",
                 h2: {
-                    "Animations": ["Balle rembondissante", "Dragon Animation", "Test Animation"],
-                    "Compositions musicales": ["Lurking in the snow FINAL", "Something yet not so much", "First attempt"],
-                    "Coutures": ["Cousin", "Tobias", "Yoslan"],
-                    "Dessins": ["Pokemon", "Horloge", "Moustache"],
-                    "Ecriture": ["Zelda", "Pokemon", "Abhosia", "Murphy"]
+                    "Animations": [
+                        { titre: "Balle rembondissante", sousTitre: "Animation 2D d'une balle" },
+                        { titre: "Dragon Animation", sousTitre: "Animation 3D d'un dragon" },
+                        { titre: "Test Animation", sousTitre: "Test d'animation divers" }
+                    ],
+                    "Compositions musicales": [
+                        { titre: "Lurking in the snow FINAL", sousTitre: "Composition originale - ambiance hivernale" },
+                        { titre: "Something yet not so much", sousTitre: "Expérimentation musicale" },
+                        { titre: "First attempt", sousTitre: "Première composition musicale" }
+                    ],
+                    "Coutures": [
+                        { titre: "Cousin", sousTitre: "Création couture - Coussin" },
+                        { titre: "Tobias", sousTitre: "Création couture - Tobias" },
+                        { titre: "Yoslan", sousTitre: "Création couture - Yoslan" }
+                    ],
+                    "Dessins": [
+                        { titre: "Pokemon", sousTitre: "Fanart Pokémon" },
+                        { titre: "Horloge", sousTitre: "Dessin d'une horloge" },
+                        { titre: "Moustache", sousTitre: "Dessin humoristique" }
+                    ],
+                    "Ecriture": [
+                        { titre: "Zelda", sousTitre: "Texte inspiré de Zelda" },
+                        { titre: "Pokemon", sousTitre: "Texte inspiré de Pokémon" },
+                        { titre: "Abhosia", sousTitre: "Univers original : Abhosia" },
+                        { titre: "Murphy", sousTitre: "Nouvelle - Murphy" }
+                    ]
                 }
             },
             pro: {
                 h1: "Projets Professionnels",
                 h2: {
-                    "Couverture de Livre": ["Le printemps renait toujours", "Couverture livre mockup"],
-                    "Illustrations": ["freelance_fourth_wing", "luny_Illu_renard"],
-                    "Logos": ["Logo_pour_Luny"],
-                    "Reseau Sociaux": ["Post Wandel", "Hamlet", "Harry Potter"],
-                    "Tutoriel": ["Petit Guide du Stagiaire"]
+                    "Couverture de Livre": [
+                        { titre: "Le printemps renait toujours", sousTitre: "Couverture pour roman" },
+                        { titre: "Couverture livre mockup", sousTitre: "Mockup de couverture" }
+                    ],
+                    "Illustrations": [
+                        { titre: "freelance_fourth_wing", sousTitre: "Illustration freelance - Fourth Wing" },
+                        { titre: "luny_Illu_renard", sousTitre: "Illustration pour Luny - Renard" }
+                    ],
+                    "Logos": [
+                        { titre: "Logo_pour_Luny", sousTitre: "Logo réalisé pour Luny" }
+                    ],
+                    "Reseau Sociaux": [
+                        { titre: "Post Wandel", sousTitre: "Campagne réseaux sociaux pour Wandel" },
+                        { titre: "Hamlet", sousTitre: "Affiche et visuel pour la pièce Hamlet" },
+                        { titre: "Harry Potter", sousTitre: "Création graphique pour événement Harry Potter" }
+                    ],
+                    "Tutoriel": [
+                        { titre: "Petit Guide du Stagiaire", sousTitre: "Guide illustré pour stagiaires" }
+                    ]
                 }
             }
         };
@@ -652,6 +687,9 @@
                 <h2 class="text-2xl font-bold text-white text-opacity-70 mb-4 text-center">${h2}</h2>
                 `;
                 h3s.forEach((h3, idx) => {
+                    // Supporte les deux formats : string ou objet
+                    let titre = h3.titre || h3;
+                    let sousTitre = h3.sousTitre || '';
                     const isEven = (catIndex + idx) % 2 === 0;
                     if (isEven) {
                         // Image à gauche, bloc à droite
@@ -661,7 +699,8 @@
                                 <span style="width:100%;text-align:center;">Image</span>
                             </div>
                             <div class="trapeze-content">
-                                <h3 class="text-lg font-semibold text-black mb-2 text-center">${h3}</h3>
+                                <h3 class="text-lg font-semibold text-black mb-2 text-center">${titre}</h3>
+<p class='text-sm text-gray-400 text-center mb-2'>${sousTitre}</p>
                             </div>
                         </div>
                         `;
@@ -670,7 +709,8 @@
                         html += `
                         <div class="trapeze-row">
                             <div class="trapeze-content right">
-                                <h3 class="text-lg font-semibold text-black mb-2 text-center">${h3}</h3>
+                                <h3 class="text-lg font-semibold text-black mb-2 text-center">${titre}</h3>
+<p class='text-sm text-gray-400 text-center mb-2'>${sousTitre}</p>
                             </div>
                             <div class="trapeze-img right">
                                 <span style="width:100%;text-align:center;">Image</span>
