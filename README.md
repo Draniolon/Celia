@@ -26,6 +26,7 @@ Portfolio interactif et créatif présentant mon parcours, mes compétences, mes
 
 ## Auteur
 - [Célia Pétillion](https://www.linkedin.com/in/célia-pétillion/)
+- [Pierre-Portfolio](https://github.com/Pierre-Portfolio/)
 
 ---
 
