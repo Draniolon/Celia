@@ -174,6 +174,13 @@
                 border-radius: 1.5rem !important;
             }
         }
+        .coussin-img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            object-position: 50% 30%; /* centre horizontalement, focus plus haut */
+            margin: 0 auto;
+        }
         .yoslan-img {
             width: 100%;
             height: 220px; /* ou la hauteur de ton trapèze/carré bleu */
@@ -658,8 +665,8 @@
                     "Publicité": [
                         { titre: "Cannettes Smile", image: "assets/projets/ecole/Publicité/Cannettes_Smile/mock-up1.png" },
                         { titre: "Chocolat Carmen", image: "assets/projets/ecole/Publicité/Chocolats_Carmen/Base boîte D.png" },
-                        { titre: "Kleneex", image: "assets/projets/ecole/Publicité/Kleneex/Présentation Kleenex sans nom.pdf" },
-                        { titre: "Swaroski", image: "./assets/projets/ecole/pub/swaroski.jpg" }
+                        { titre: "Kleneex", image: "assets/projets/ecole/Publicité/Kleneex/kleenex.png" },
+                        { titre: "Swaroski", image: "assets/projets/ecole/Publicité/Swarovski/swaroski.png" }
                     ],
                     "Exercices": [
                         { titre: "Depliant", image: "assets/projets/ecole/Exercices/Depliant A.png" },
@@ -681,20 +688,21 @@
                         { titre: "First attempt", sousTitre: "Première composition musicale", image: "https://static.vecteezy.com/ti/vecteur-libre/p1/11000296-conception-de-banniere-d-onde-sonore-de-musique-abstraite-gratuit-vectoriel.jpg", customClass: "music-img" }
                     ],
                     "Coutures": [
-                        { titre: "Cousin", sousTitre: "Création couture - Coussin", image: "assets/projets/perso/Couture/Coussin.jpg" },
+                        { titre: "Cousin", sousTitre: "Création couture - Coussin", image: "assets/projets/perso/Couture/Coussin.jpg", customClass: "coussin-img" },
                         { titre: "Tobias", sousTitre: "Création couture - Tobias", image: "assets/projets/perso/Couture/Tobias2.jpg" },
                         { titre: "Yoslan", sousTitre: "Création couture - Yoslan", image: "assets/projets/perso/Couture/Yoslan2.jpg", customClass: "yoslan-img" }
                     ],
                     "Dessins": [
-                        { titre: "Moustache", sousTitre: "Dessin humoristique", image: "assets/projets/perso/dessins/Moustache.png" },
                         { titre: "Horloge", sousTitre: "Dessin d'une horloge", image: "assets/projets/perso/dessins/Horloge.png" },
+                        { titre: "Moustache", sousTitre: "Dessin humoristique", image: "assets/projets/perso/dessins/Moustache.png" },
+                        { titre: "Dranio Vitrail", sousTitre: "Fanart vitrail", image: "assets/projets/perso/dessins/Dranio_vitrail.jpg" },
                         { titre: "Pokemon", sousTitre: "Fanart Pokémon", image: "assets/projets/perso/dessins/Folivane.png", customClass: "pokemon-img" }
                     ],
                     "Ecriture": [
-                        { titre: "Zelda", sousTitre: "Texte inspiré de Zelda", image: "assets/projets/perso/ecriture/zelda.jpg" },
-                        { titre: "Pokemon", sousTitre: "Texte inspiré de Pokémon", image: "assets/projets/perso/ecriture/pokemon.jpg" },
-                        { titre: "Abhosia", sousTitre: "Univers original : Abhosia", image: "assets/projets/perso/ecriture/abhosia.jpg" },
-                        { titre: "Murphy", sousTitre: "Nouvelle - Murphy", image: "assets/projets/perso/ecriture/murphy.jpg" }
+                        { titre: "Zelda", sousTitre: "Texte inspiré de Zelda", image: "assets/projets/perso/Ecriture/Zelda.png" },
+                        { titre: "Abhosia", sousTitre: "Univers original : Abhosia", image: "assets/projets/perso/Ecriture/Abhosia.png" },
+                        { titre: "Pokemon", sousTitre: "Texte inspiré de Pokémon", image: "assets/projets/perso/Ecriture/poke.jpg" },
+                        { titre: "Murphy", sousTitre: "Nouvelle - Murphy", image: "assets/projets/perso/Ecriture/murphy.png" }
                     ]
                 }
             },
@@ -732,7 +740,14 @@
 
             let html = '';
             let catIndex = 0;
-            Object.keys(section.h2).forEach((h2, idx) => {
+            let categories;
+            if (sectionKey === 'perso') {
+                categories = ['Dessins', 'Animations', 'Ecriture', 'Compositions musicales', 'Coutures'];
+            } else {
+                categories = Object.keys(section.h2);
+            }
+            categories.forEach((h2, idx) => {
+                if (!section.h2[h2]) return;
                 const h3s = section.h2[h2];
                 html += `
                 <h2 class="text-2xl font-bold text-white text-opacity-70 mb-4 text-center">${h2}</h2>
