@@ -80,12 +80,8 @@
 <body class="min-h-screen flex flex-col bg-[#2bb8b8] text-white font-['Roboto',sans-serif]" style="overflow:visible;">
     <!-- Lang Switcher -->
     <div class="fixed top-4 left-4 z-50 flex gap-2">
-    <a href="https://www.google.fr" target="_blank" rel="noopener noreferrer">
-        <img src="./assets/images/profil/fr.png" alt="Français" class="w-8 h-8 object-cover rounded" style="box-shadow:none;border-bottom:none;background:transparent" />
-    </a>
-    <a href="https://www.google.fr" target="_blank" rel="noopener noreferrer">
-        <img src="./assets/images/profil/uk.png" alt="English" class="w-8 h-8 object-cover rounded" style="box-shadow:none;border-bottom:none;background:transparent" />
-    </a>
+    <img id="flag-fr" src="./assets/images/profil/fr.png" alt="Français" class="w-8 h-8 object-cover rounded" style="box-shadow:none;border-bottom:none;background:transparent; cursor:pointer;" />
+    <img id="flag-en" src="./assets/images/profil/uk.png" alt="English" class="w-8 h-8 object-cover rounded" style="box-shadow:none;border-bottom:none;background:transparent; cursor:pointer;" />
 </div>
     <main class="flex-grow flex flex-col items-center justify-center min-h-0 py-8 px-0" style="overflow:visible;">
         <div class="max-w-7xl w-full mx-auto flex flex-col flex-grow space-y-8 min-h-0">
@@ -110,11 +106,7 @@
                             <div class="mx-auto">
                                 <h1 class="text-5xl font-bold tracking-wide">CÉLIA PÉTILLION</h1>
                                 <h2 class="text-4xl font-medium opacity-90 mt-2">Graphiste</h2>
-                                <p class="mt-8 max-w-3xl text-xl leading-relaxed opacity-90">
-                                    Animée depuis toujours par une passion pour le dessin et la littérature, je suis à
-                                    la recherche d'une alternance d'une durée d’un an, au rythme d’1 semaine en
-                                    formation et de 3 semaines en entreprise.
-                                </p>
+                                <p class="mt-8 max-w-3xl text-xl leading-relaxed opacity-90">Animée depuis toujours par une passion pour le dessin et la littérature, je suis à la recherche d'une alternance d'une durée d’un an, au rythme d’1 semaine en formation et de 3 semaines en entreprise.</p>
                             </div>
                         </div>
                         <div class="buttons flex flex-col sm:flex-row gap-10 mt-10 justify-center">
@@ -317,7 +309,7 @@
                                     class="contact-tile group relative flex flex-col items-center gap-4 p-8 border-2 border-white/30 rounded-lg hover:border-white/60 transition-all cursor-pointer w-[300px]">
                                     <i class="fas fa-phone text-4xl"></i>
                                     <span class="text-xl">Téléphone</span>
-                                    <span class="text-lg text-white w-full block text-center">06 95 90 54 27</span>
+                                    <span class="text-lg text-white w-full block text-center">+33 6 95 90 54 27</span>
                                 </div>
                             </div>
                         </div>
@@ -494,6 +486,15 @@
             });
         });
     </script>
+<script src="translate.js"></script>
+<script>
+  document.getElementById('flag-fr').addEventListener('click', function() {
+    translateTo('fr');
+  });
+  document.getElementById('flag-en').addEventListener('click', function() {
+    translateTo('en');
+  });
+</script>
 </body>
 
 </html>
