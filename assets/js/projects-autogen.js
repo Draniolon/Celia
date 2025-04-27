@@ -97,6 +97,7 @@ function renderCategories() {
 document.addEventListener('DOMContentLoaded', renderCategories);
 // Ajoute un div id="categories-container" dans ton HTML là où tu veux afficher les catégories
 
+
 function createProjectCard(project, categoryLabel) {
     let html = `<span class="block text-xs text-[#2bb8b8] font-semibold mb-1 text-center">${categoryLabel}</span>`;
     html += `<div class="project-card bg-white/10 rounded-lg shadow-lg p-4 flex flex-col gap-4">`;

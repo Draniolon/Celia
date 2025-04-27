@@ -464,50 +464,47 @@
                         <img src="assets/images/profil/pro.png" alt="Projet professionnel"
                             class="w-full max-w-[800px] max-h-[600px] aspect-[4/3] rounded-lg cursor-pointer object-cover" />
                         <div
-                            class="absolute bottom-6 left-1/2 -translate-x-1/2 pointer-events-none text-2xl font-bold uppercase text-white drop-shadow-lg transition-transform group-hover:scale-105 text-center whitespace-nowrap overflow-x-auto">
-                            Projets Professionnels</div>
+                            class="absolute bottom-6 left-1/2 -translate-x-1/2 pointer-events-none text-2xl font-bold uppercase text-white drop-shadow-lg transition-transform group-hover:scale-105 text-center whitespace-nowrap overflow-x-auto" id="key_66"></div>
                     </div>
                     <div class="project-card" data-project="ecole">
                         <img src="assets/images/profil/scolair.png" alt="Projet scolaire"
                             class="w-full max-w-[800px] max-h-[600px] aspect-[4/3] rounded-lg cursor-pointer object-cover object-top" />
                         <div
-                            class="absolute bottom-6 left-1/2 -translate-x-1/2 pointer-events-none text-2xl font-bold uppercase text-white drop-shadow-lg transition-transform group-hover:scale-105 text-center whitespace-nowrap overflow-x-auto">
-                            Projets Scolaires</div>
+                            class="absolute bottom-6 left-1/2 -translate-x-1/2 pointer-events-none text-2xl font-bold uppercase text-white drop-shadow-lg transition-transform group-hover:scale-105 text-center whitespace-nowrap overflow-x-auto" id="key_67"></div>
                     </div>
                     <div class="project-card" data-project="perso">
                         <img src="assets/images/profil/perso2.png" alt="Projet personnel"
                             class="w-full max-w-[800px] max-h-[600px] aspect-[4/3] rounded-lg cursor-pointer object-cover" />
                         <div
-                            class="absolute bottom-6 left-1/2 -translate-x-1/2 pointer-events-none text-2xl font-bold uppercase text-white drop-shadow-lg transition-transform group-hover:scale-105 text-center whitespace-nowrap overflow-x-auto">
-                            Projets Personnels</div>
+                            class="absolute bottom-6 left-1/2 -translate-x-1/2 pointer-events-none text-2xl font-bold uppercase text-white drop-shadow-lg transition-transform group-hover:scale-105 text-center whitespace-nowrap overflow-x-auto" id="key_68"></div>
                     </div>
                 </section>
 
                 <!-- Sections de détails des projets -->
                 <div class="project-details hidden" id="pro-details">
                     <div class="w-full h-1 bg-white/50 my-8"></div>
-                    <h3 class="text-3xl font-bold text-center mb-8">Projets Professionnels</h3>
+                    <h3 id="key_66" class="text-3xl font-bold text-center mb-8"></h3>
                     <div class="section-structure" id="pro-structure"></div>
                     <div class="w-full h-1 bg-white/50 my-8"></div>
                 </div>
 
                 <div class="project-details hidden" id="ecole-details">
                     <div class="w-full h-1 bg-white/50 my-8"></div>
-                    <h3 class="text-3xl font-bold text-center mb-8">Projets Scolaires</h3>
+                    <h3 id="key_67" class="text-3xl font-bold text-center mb-8"></h3>
                     <div class="section-structure" id="ecole-structure"></div>
                     <div class="w-full h-1 bg-white/50 my-8"></div>
                 </div>
 
                 <div class="project-details hidden" id="perso-details">
                     <div class="w-full h-1 bg-white/50 my-8"></div>
-                    <h3 class="text-3xl font-bold text-center mb-8">Projets Personnels</h3>
+                    <h3 id="key_68" class="text-3xl font-bold text-center mb-8"></h3>
                     <div class="section-structure" id="perso-structure"></div>
                     <div class="w-full h-1 bg-white/50 my-8"></div>
                 </div>
             </div>
     </main>
     <footer class="w-full text-center text-white/70 py-0 text-sm select-none -mt-6">
-        <strong> Célia Pétillion, tous droits réservés. Design et contenu protégés.</strong>
+        <strong id="key_70"></strong>
     </footer>
     <script src="assets/js/projects-autogen.js"></script>
     <script>
@@ -621,6 +618,8 @@
     </script>
     <script src="assets/js/translate.js"></script>
     <script>
+    let currentLang = 'fr';
+
         function setActiveFlag(flag) {
             document.getElementById('flag-fr').classList.add('flag-active');
             document.getElementById('flag-en').classList.remove('flag-active');
