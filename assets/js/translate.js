@@ -4,10 +4,13 @@
 const translations = {
     fr: {
         // Ajoute ici les clés/français si besoin
+        'Graphiste': 'Graphiste',
+        'Edition': 'Edition',
     },
     en: {
         'CÉLIA PÉTILLION': 'CELIA PETILLION',
-        'Assistante Edition': 'Editorial Assistant',
+        'Edition': 'Editorial Assistant',
+        'Graphiste': 'Graphic Designer',
         'Curriculum Vitae': 'Curriculum Vitae',
         'Portfolio': 'Portfolio',
         'LinkedIn': 'LinkedIn',

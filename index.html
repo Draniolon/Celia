@@ -158,14 +158,24 @@
             clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
         }
         @media (max-width: 700px) {
-        .trapeze-row { flex-direction: column; }
-        .trapeze-img, .trapeze-img.right, .trapeze-content, .trapeze-content.right {
-            clip-path: none !important;
-            margin: 0 !important;
-            border-radius: 1.5rem !important;
+            .trapeze-row { flex-direction: column; }
+            .trapeze-img, .trapeze-img.right, .trapeze-content, .trapeze-content.right {
+                clip-path: none !important;
+                margin: 0 !important;
+                border-radius: 1.5rem !important;
+            }
         }
-        }
-    </style>
+        .yoslan-img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            object-fit: cover;
+            object-position: 60% 40%; /* Ajuste ces valeurs pour déplacer la zone visible */
+            width: 100%;
+            max-width: 220px;
+            height: auto;
+}
+</style>
 </head>
 
 <body class="min-h-screen flex flex-col bg-[#2bb8b8] text-white font-['Roboto',sans-serif]" style="overflow:visible;">
@@ -202,7 +212,7 @@
                             </div>
                             <div class="mx-auto">
                                 <h1 class="text-5xl font-bold tracking-wide">CÉLIA PÉTILLION</h1>
-                                <h2 class="text-4xl font-medium opacity-90 mt-2">Assistante Edition</h2>
+                                <h2 class="text-4xl font-medium opacity-90 mt-2">Graphiste</h2>
                                 <p class="mt-8 max-w-3xl text-xl leading-relaxed opacity-90">Animée depuis toujours par
                                     une passion pour le dessin et la littérature, je suis à la recherche d'une
                                     alternance d'une durée d’un an, au rythme de 3 semaines en entreprise et 1 semaine à l'école.</p>
@@ -640,7 +650,7 @@
                     "Coutures": [
                         { titre: "Cousin", sousTitre: "Création couture - Coussin", image: "assets/projets/perso/Couture/Coussin.jpg" },
                         { titre: "Tobias", sousTitre: "Création couture - Tobias", image: "assets/projets/perso/Couture/Tobias2.jpg" },
-                        { titre: "Yoslan", sousTitre: "Création couture - Yoslan", image: "assets/projets/perso/Couture/Yoslan2.jpg" }
+                        { titre: "Yoslan", sousTitre: "Création couture - Yoslan", image: "assets/projets/perso/Couture/Yoslan2.jpg", customClass: "yoslan-img" }
                     ],
                     "Dessins": [
                         { titre: "Pokemon", sousTitre: "Fanart Pokémon", image: "assets/projets/perso/dessins/Folivane.png" },
@@ -700,12 +710,13 @@
                     let sousTitre = h3.sousTitre || '';
                     let image = h3.image || 'assets/images/profil/default.png'; // image par défaut
                     const isEven = (catIndex + idx) % 2 === 0;
+                    let customClass = h3.customClass ? h3.customClass : '';
                     if (isEven) {
                         // Image à gauche, bloc à droite
                         html += `
                         <div class="trapeze-row">
                             <div class="trapeze-img">
-                                <img src="${image}" alt="Image projet ${titre}" style="width:100%;height:auto;max-height:220px;object-fit:cover;display:block;margin:auto;" />
+                                <img src="${image}" alt="Image projet ${titre}" style="width:100%;height:auto;max-height:220px;object-fit:cover;display:block;margin:auto;" class="${customClass}" />
                             </div>
                             <div class="trapeze-content">
                                 <h3 class="text-lg font-semibold text-black mb-2 text-center">${titre}</h3>
@@ -722,7 +733,7 @@
 <p class='text-sm text-gray-400 text-center mb-2'>${sousTitre}</p>
                             </div>
                             <div class="trapeze-img right">
-                                <img src="${image}" alt="Image projet ${titre}" style="width:100%;height:auto;max-height:220px;object-fit:cover;display:block;margin:auto;" />
+                                <img src="${image}" alt="Image projet ${titre}" style="width:100%;height:auto;max-height:220px;object-fit:cover;display:block;margin:auto;" class="${customClass}" />
                             </div>
                         </div>
                         `;
