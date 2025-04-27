@@ -99,6 +99,57 @@
         .tooltip-bulle.top-full {
             @apply top-full mt-2;
         }
+        .trapeze-row {
+            display: flex;
+            align-items: stretch;
+            margin-bottom: 2rem;
+            min-height: 170px;
+        }
+        .trapeze-img {
+            flex: 1 1 40%;
+            background: linear-gradient(120deg,#b2fefa,#0ed2f7);
+            clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+            min-width: 160px;
+            min-height: 120px;
+        }
+        .trapeze-img.right {
+            clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+            background: linear-gradient(120deg,#fad961,#f76b1c);
+        }
+        .trapeze-content {
+            flex: 1 1 60%;
+            background: rgba(255,255,255,0.5);
+            border-radius: 0 1.5rem 1.5rem 0;
+            box-shadow: 0 2px 16px 0 #0002;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem 2rem 2rem 2rem;
+            margin-left: -2rem;
+            min-width: 200px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+        }
+.trapeze-content.right {
+            border-radius: 1.5rem 0 0 1.5rem;
+            margin-left: 0;
+            margin-right: -2rem;
+            /* Côté gauche droit, côté droit biseauté */
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+        }
+        @media (max-width: 700px) {
+        .trapeze-row { flex-direction: column; }
+        .trapeze-img, .trapeze-img.right, .trapeze-content, .trapeze-content.right {
+            clip-path: none !important;
+            margin: 0 !important;
+            border-radius: 1.5rem !important;
+        }
+        }
     </style>
 </head>
 
@@ -106,10 +157,12 @@
     <!-- Lang Switcher -->
     <div class="fixed top-4 left-4 z-50 flex gap-2">
         <span id="flag-fr" class="flag-wrapper" style="display:inline-block;position:relative;cursor:pointer;">
-            <img src="./assets/images/profil/fr.png" alt="Français" class="w-8 h-8 object-cover rounded" style="box-shadow:none;border-bottom:none;background:transparent; cursor:pointer;" />
+            <img src="./assets/images/profil/fr.png" alt="Français" class="w-8 h-8 object-cover rounded"
+                style="box-shadow:none;border-bottom:none;background:transparent; cursor:pointer;" />
         </span>
         <span id="flag-en" class="flag-wrapper" style="display:inline-block;position:relative;cursor:pointer;">
-            <img src="./assets/images/profil/uk.png" alt="English" class="w-8 h-8 object-cover rounded" style="box-shadow:none;border-bottom:none;background:transparent; cursor:pointer;" />
+            <img src="./assets/images/profil/uk.png" alt="English" class="w-8 h-8 object-cover rounded"
+                style="box-shadow:none;border-bottom:none;background:transparent; cursor:pointer;" />
         </span>
     </div>
     <main class="flex-grow flex flex-col items-center justify-center min-h-0 py-8 px-0" style="overflow:visible;">
@@ -135,7 +188,10 @@
                             <div class="mx-auto">
                                 <h1 class="text-5xl font-bold tracking-wide">CÉLIA PÉTILLION</h1>
                                 <h2 class="text-4xl font-medium opacity-90 mt-2">Graphiste</h2>
-                                <p class="mt-8 max-w-3xl text-xl leading-relaxed opacity-90">Animée depuis toujours par une passion pour le dessin et la littérature, je suis à la recherche d'une alternance d'une durée d’un an, au rythme d’1 semaine en formation et de 3 semaines en entreprise.</p>
+                                <p class="mt-8 max-w-3xl text-xl leading-relaxed opacity-90">Animée depuis toujours par
+                                    une passion pour le dessin et la littérature, je suis à la recherche d'une
+                                    alternance d'une durée d’un an, au rythme d’1 semaine en formation et de 3 semaines
+                                    en entreprise.</p>
                             </div>
                         </div>
                         <div class="buttons flex flex-col sm:flex-row gap-10 mt-10 justify-center">
@@ -251,15 +307,18 @@
                                 <div class="relative flex flex-col items-center group">
                                     <div
                                         class="bg-white/30 rounded-xl p-4 flex flex-col -mt-32 relative transition-colors duration-200 group-hover:bg-white/50 w-52 md:w-60 items-center">
-                                        <span class="text-xl text-white text-center">Lycée La Bruyère<br><span class="text-sm font-normal">2017-2019</span></span>
-                                        <span class="text-sm font-normal text-center">Bac Littéraire<br>Option Arts Plastiques</span>
+                                        <span class="text-xl text-white text-center">Lycée La Bruyère<br><span
+                                                class="text-sm font-normal">2017-2019</span></span>
+                                        <span class="text-sm font-normal text-center">Bac Littéraire<br>Option Arts
+                                            Plastiques</span>
                                     </div>
                                 </div>
                                 <!-- 2: Bas -->
                                 <div class="relative flex flex-col items-center group">
                                     <div
                                         class="bg-white/30 rounded-xl p-4 flex flex-col mb-0 mt-36 relative transition-colors duration-200 group-hover:bg-white/50 w-52 md:w-60 items-center">
-                                        <span class="text-xl text-white text-center">Créapole<br><span class="text-sm font-normal">2019-2021</span></span>
+                                        <span class="text-xl text-white text-center">Créapole<br><span
+                                                class="text-sm font-normal">2019-2021</span></span>
                                         <span class="text-sm font-normal text-center">Bachelor création et design</span>
                                     </div>
                                 </div>
@@ -267,7 +326,8 @@
                                 <div class="relative flex flex-col items-center group">
                                     <div
                                         class="bg-white/30 rounded-xl p-4 flex flex-col -mt-32 relative transition-colors duration-200 group-hover:bg-white/50 w-52 md:w-60 items-center">
-                                        <span class="text-xl text-white text-center">CNED<br><span class="text-sm font-normal">2021-2022</span></span>
+                                        <span class="text-xl text-white text-center">CNED<br><span
+                                                class="text-sm font-normal">2021-2022</span></span>
                                         <span class="text-sm font-normal text-center">Formation d’écrivain public</span>
                                     </div>
                                 </div>
@@ -275,8 +335,10 @@
                                 <div class="relative flex flex-col items-center group">
                                     <div
                                         class="bg-white/30 rounded-xl p-4 flex flex-col mb-0 mt-36 relative transition-colors duration-200 group-hover:bg-white/50 w-52 md:w-60 items-center">
-                                        <span class="text-xl text-white text-center">Garti<br><span class="text-sm font-normal">2023-2026</span></span>
-                                        <span class="text-sm font-normal text-center">École supérieure de graphisme</span>
+                                        <span class="text-xl text-white text-center">Garti<br><span
+                                                class="text-sm font-normal">2023-2026</span></span>
+                                        <span class="text-sm font-normal text-center">École supérieure de
+                                            graphisme</span>
                                     </div>
                                 </div>
                             </div>
@@ -576,16 +638,59 @@
             document.querySelectorAll('.section-structure').forEach(div => div.innerHTML = '');
             const section = sectionData[sectionKey];
             if (!section) return;
+
+            // Descriptions fictives pour chaque h2
+            const descriptions = {
+                "Publicité": "Créations graphiques pour des marques, affiches et campagnes publicitaires.",
+                "Exercices": "Exercices de style et d’apprentissage du graphisme.",
+                "Animations": "Animations 2D/3D réalisées pour explorer le mouvement et la narration visuelle.",
+                "Compositions musicales": "Compositions et arrangements originaux, explorant différents styles musicaux.",
+                "Coutures": "Créations textiles et projets de couture faits main.",
+                "Dessins": "Dessins traditionnels et numériques, croquis et illustrations.",
+                "Ecriture": "Textes, nouvelles et projets d’écriture créative.",
+                "Couverture de Livre": "Designs de couvertures pour des ouvrages littéraires.",
+                "Illustrations": "Illustrations réalisées pour des clients ou des projets personnels.",
+                "Logos": "Création de logos pour des entreprises ou des événements.",
+                "Reseau Sociaux": "Contenus graphiques pour les réseaux sociaux.",
+                "Tutoriel": "Supports pédagogiques et tutoriels illustrés."
+            };
+
             let html = '';
+            let i = 0;
             Object.entries(section.h2).forEach(([h2, h3s]) => {
-                html += `<h4 class='text-xl font-semibold mt-4 mb-2'>${h2}</h4><ul class='mb-2 ml-4'>`;
-                h3s.forEach(h3 => {
-                    html += `<li class='text-base ml-2'>${h3}</li>`;
-                });
-                html += `</ul>`;
+                const isEven = i % 2 === 0;
+                if (isEven) {
+                    // Image à gauche, texte à droite (bleu)
+                    html += `
+                    <div class="trapeze-row">
+                    <div class="trapeze-img">
+                        <span style="width:100%;text-align:center;">Image</span>
+                    </div>
+                    <div class="trapeze-content">
+                        <h4 class="text-xl font-bold text-black mb-2 text-center">${h2}</h4>
+                        <p class="mb-2 text-gray-700 text-center">${descriptions[h2] || "Description de la catégorie."}</p>
+                    </div>
+                    </div>
+                `;
+                } else {
+                    // Texte à gauche, image à droite (orange)
+                    html += `
+                    <div class="trapeze-row">
+                    <div class="trapeze-content right">
+                        <h4 class="text-xl font-bold text-black mb-2 text-center">${h2}</h4>
+                        <p class="mb-2 text-gray-700 text-center">${descriptions[h2] || "Description de la catégorie."}</p>
+                    </div>
+                    <div class="trapeze-img right">
+                        <span style="width:100%;text-align:center;">Image</span>
+                    </div>
+                    </div>
+                `;
+                }
+                i++;
             });
-            document.getElementById(sectionKey+"-structure").innerHTML = html;
+            document.getElementById(sectionKey + "-structure").innerHTML = html;
         }
+
         // Ajoute l'écouteur sur les images de section (pro, perso, ecole)
         document.querySelectorAll('.project-card[data-project]').forEach(card => {
             card.addEventListener('click', function (e) {
