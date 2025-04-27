@@ -8,7 +8,7 @@ const translations = {
     en: {
         'CÉLIA PÉTILLION': 'CELIA PETILLION',
         'Graphiste': 'Graphic Designer',
-        'Télécharger mon CV': 'Download my CV',
+        'Curriculum Vitae': 'Curriculum Vitae',
         'Portfolio': 'Portfolio',
         'LinkedIn': 'LinkedIn',
         'Animée depuis toujours par une passion pour le dessin et la littérature, je suis à la recherche d\'une alternance d\'une durée d’un an, au rythme d’1 semaine en formation et de 3 semaines en entreprise.':
