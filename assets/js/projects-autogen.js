@@ -34,10 +34,8 @@ const categories = [
           'Bannière Facebook',
         ]
       }
-      // ... autres sous-catégories
     ]
   },
-  // Ajoute ici les autres catégories (perso, ecole, etc.)
 ];
 
 function renderCategories() {
@@ -99,66 +97,6 @@ function renderCategories() {
 document.addEventListener('DOMContentLoaded', renderCategories);
 // Ajoute un div id="categories-container" dans ton HTML là où tu veux afficher les catégories
 
-// Ici commence la déclaration de la structure principale
-const projectsData = {
-    pro: [
-        {
-            title: "Illustration rémunérée dragons Fourth Wings",
-            folder: "assets/projets/pro/Illustration rémunérée dragons Fourth Wings",
-            files: ["dragon1.png", "dragon2.jpg"]
-        },
-        {
-            title: "Illustrations rémunérées pour Luny",
-            folder: "assets/projets/pro/Illustrations rémunérées pour Luny",
-            files: ["illu1.png", "illu2.jpg"]
-        },
-        {
-            title: "Logos pour Luny",
-            folder: "assets/projets/pro/Logos pour Luny",
-            files: ["logo1.svg", "logo2.png"]
-        },
-        {
-            title: "Petit guide du stagiaire",
-            folder: "assets/projets/pro/Petit guide du stagiaire",
-            files: ["guide1.pdf"]
-        },
-        {
-            title: "Semaine stage Luny",
-            folder: "assets/projets/pro/Semaine stage Luny",
-            files: ["Images.png", "Images2.png", "Images3.png", "Images4.png", "Images5.png"]
-        }
-    ],
-    perso: [
-        {
-            title: "Animation-Vidéo",
-            folder: "assets/projets/perso/Animation-Vidéo",
-            files: ["video1.mp4"]
-        },
-        {
-            title: "Composition musicale",
-            folder: "assets/projets/perso/Composition musicale",
-            files: ["musique1.mp3"]
-        },
-        {
-            title: "Couture",
-            folder: "assets/projets/perso/Couture",
-            files: ["robe.jpg"]
-        },
-        {
-            title: "Dessins - Décors",
-            folder: "assets/projets/perso/Dessins/Décors",
-            files: ["deco1.jpg", "deco2.jpg"]
-        }
-    ],
-    ecole: [
-        {
-            title: "Projet Brainshift AI",
-            folder: "assets/projets/ecole/Projet Brainshift AI",
-            files: ["ai1.png", "ai2.png"]
-        }
-    ]
-};
-
 function createProjectCard(project, categoryLabel) {
     let html = `<span class="block text-xs text-[#2bb8b8] font-semibold mb-1 text-center">${categoryLabel}</span>`;
     html += `<div class="project-card bg-white/10 rounded-lg shadow-lg p-4 flex flex-col gap-4">`;
@@ -185,9 +123,3 @@ function renderProjectsSection(sectionId, projects, categoryLabel = "") {
     if (!container) return;
     container.innerHTML = projects.map(project => createProjectCard(project, categoryLabel)).join('');
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    renderProjectsSection('pro-details', projectsData.pro, 'Projets Professionnels');
-    renderProjectsSection('perso-details', projectsData.perso, 'Projets Personnels');
-    renderProjectsSection('scolaire-details', projectsData.ecole, 'Projets Scolaires');
-});
