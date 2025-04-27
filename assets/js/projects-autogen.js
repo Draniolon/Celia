@@ -99,6 +99,8 @@ function renderCategories() {
 document.addEventListener('DOMContentLoaded', renderCategories);
 // Ajoute un div id="categories-container" dans ton HTML là où tu veux afficher les catégories
 
+// Ici commence la déclaration de la structure principale
+const projectsData = {
     pro: [
         {
             title: "Illustration rémunérée dragons Fourth Wings",

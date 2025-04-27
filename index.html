@@ -651,46 +651,48 @@
                 "Couverture de Livre": "Designs de couvertures pour des ouvrages littéraires.",
                 "Illustrations": "Illustrations réalisées pour des clients ou des projets personnels.",
                 "Logos": "Création de logos pour des entreprises ou des événements.",
-                "Reseau Sociaux": "Contenus graphiques pour les réseaux sociaux.",
-                "Tutoriel": "Supports pédagogiques et tutoriels illustrés."
             };
 
             let html = '';
-            let i = 0;
-            Object.entries(section.h2).forEach(([h2, h3s]) => {
-                const isEven = i % 2 === 0;
-                if (isEven) {
-                    // Image à gauche, texte à droite (bleu)
-                    html += `
-            <span class="block text-xs font-semibold mb-1 text-center bg-white/60 rounded px-3 py-1 text-black mx-auto" style="display:block;">${h2}</span>
-            <div class="trapeze-row">
-            <div class="trapeze-img">
-                <span style="width:100%;text-align:center;">Image</span>
-            </div>
-            <div class="trapeze-content">
-                <h4 class="text-xl font-bold text-black mb-2 text-center">Titre</h4>
-                <p class="mb-2 text-gray-700 text-center">${descriptions[h2] || "Description de la catégorie."}</p>
-            </div>
-            </div>
-        `;
-                } else {
-                    // Texte à gauche, image à droite (orange)
-                    html += `
-            <span class="block text-xs font-semibold mb-1 text-center bg-white/60 rounded px-3 py-1 text-black mx-auto" style="display:block;">${h2}</span>
-            <div class="trapeze-row">
-            <div class="trapeze-content right">
-                <h4 class="text-xl font-bold text-black mb-2 text-center">Titre</h4>
-                <p class="mb-2 text-gray-700 text-center">${descriptions[h2] || "Description de la catégorie."}</p>
-            </div>
-            <div class="trapeze-img right">
-                <span style="width:100%;text-align:center;">Image</span>
-            </div>
-            </div>
-        `;
-                }
-                i++;
+            let catIndex = 0;
+            Object.keys(section.h2).forEach((h2, idx) => {
+                const h3s = section.h2[h2];
+                html += `
+                <h2 class="text-2xl font-bold text-black mb-4">${h2}</h2>
+                <p class="text-lg text-black/60 mb-8">${descriptions[h2]}</p>
+                `;
+                h3s.forEach((h3, idx) => {
+                    const isEven = (catIndex + idx) % 2 === 0;
+                    if (isEven) {
+                        // Image à gauche, bloc à droite
+                        html += `
+                        <div class="trapeze-row">
+                            <div class="trapeze-img">
+                                <span style="width:100%;text-align:center;">Image</span>
+                            </div>
+                            <div class="trapeze-content">
+                                <h3 class="text-lg font-semibold text-black mb-2 text-center">${h3}</h3>
+                            </div>
+                        </div>
+                        `;
+                    } else {
+                        // Bloc à gauche, image à droite
+                        html += `
+                        <div class="trapeze-row">
+                            <div class="trapeze-content right">
+                                <h3 class="text-lg font-semibold text-black mb-2 text-center">${h3}</h3>
+                            </div>
+                            <div class="trapeze-img right">
+                                <span style="width:100%;text-align:center;">Image</span>
+                            </div>
+                        </div>
+                        `;
+                    }
+                });
+                catIndex += h3s.length;
             });
-            document.getElementById(sectionKey + "-structure").innerHTML = html;
+
+            document.getElementById(`${sectionKey}-structure`).innerHTML = html;
         }
 
         // Ajoute l'écouteur sur les images de section (pro, perso, ecole)
