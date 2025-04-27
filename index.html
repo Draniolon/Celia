@@ -28,6 +28,22 @@
 /* Effet hover sur les drapeaux de langue */
 #flag-fr, #flag-en {
     transition: transform 0.2s cubic-bezier(.4,2,.6,1);
+    position: relative;
+}
+
+.flag-wrapper.flag-active::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 3px;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.85);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 20;
 }
 #flag-fr:hover, #flag-en:hover {
     transform: scale(1.25);
@@ -89,8 +105,12 @@
 <body class="min-h-screen flex flex-col bg-[#2bb8b8] text-white font-['Roboto',sans-serif]" style="overflow:visible;">
     <!-- Lang Switcher -->
     <div class="fixed top-4 left-4 z-50 flex gap-2">
-    <img id="flag-fr" src="./assets/images/profil/fr.png" alt="Français" class="w-8 h-8 object-cover rounded" style="box-shadow:none;border-bottom:none;background:transparent; cursor:pointer;" />
-    <img id="flag-en" src="./assets/images/profil/uk.png" alt="English" class="w-8 h-8 object-cover rounded" style="box-shadow:none;border-bottom:none;background:transparent; cursor:pointer;" />
+    <span id="flag-fr" class="flag-wrapper" style="display:inline-block;position:relative;cursor:pointer;">
+      <img src="./assets/images/profil/fr.png" alt="Français" class="w-8 h-8 object-cover rounded" style="box-shadow:none;border-bottom:none;background:transparent; cursor:pointer;" />
+    </span>
+    <span id="flag-en" class="flag-wrapper" style="display:inline-block;position:relative;cursor:pointer;">
+      <img src="./assets/images/profil/uk.png" alt="English" class="w-8 h-8 object-cover rounded" style="box-shadow:none;border-bottom:none;background:transparent; cursor:pointer;" />
+    </span>
 </div>
     <main class="flex-grow flex flex-col items-center justify-center min-h-0 py-8 px-0" style="overflow:visible;">
         <div class="max-w-7xl w-full mx-auto flex flex-col flex-grow space-y-8 min-h-0">
@@ -497,12 +517,24 @@
     </script>
 <script src="translate.js"></script>
 <script>
+  function setActiveFlag(flag) {
+    document.getElementById('flag-fr').classList.add('flag-active');
+    document.getElementById('flag-en').classList.remove('flag-active');
+    if(flag === 'flag-en') {
+      document.getElementById('flag-fr').classList.remove('flag-active');
+      document.getElementById('flag-en').classList.add('flag-active');
+    }
+  }
   document.getElementById('flag-fr').addEventListener('click', function() {
     translateTo('fr');
+    setActiveFlag('flag-fr');
   });
   document.getElementById('flag-en').addEventListener('click', function() {
     translateTo('en');
+    setActiveFlag('flag-en');
   });
+  // Initialisation : activer le drapeau FR par défaut
+  setActiveFlag('flag-fr');
 </script>
 </body>
 
