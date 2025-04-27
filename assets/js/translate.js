@@ -7,12 +7,12 @@ const translations = {
     },
     en: {
         'CÉLIA PÉTILLION': 'CELIA PETILLION',
-        'Graphiste': 'Graphic Designer',
+        'Assistante Edition': 'Editorial Assistant',
         'Curriculum Vitae': 'Curriculum Vitae',
         'Portfolio': 'Portfolio',
         'LinkedIn': 'LinkedIn',
-        'Animée depuis toujours par une passion pour le dessin et la littérature, je suis à la recherche d\'une alternance d\'une durée d’un an, au rythme d’1 semaine en formation et de 3 semaines en entreprise.':
-          'Creative and passionate about both drawing and literature, I am currently seeking a one-year apprenticeship in graphic design. My ideal rhythm is 1 week in school and 3 weeks in a company, where I can contribute my artistic skills and learn from real-world experience.',
+        'Animée depuis toujours par une passion pour le dessin et la littérature, je suis à la recherche d\'une alternance d\'une durée d’un an, au rythme de 3 semaines en entreprise et 1 semaine à l\'école.':
+          'Driven by a lifelong passion for drawing and literature, I am seeking a one-year apprenticeship with a schedule of 3 weeks in a company and 1 week at school.',
         'LOGICIELS': 'SOFTWARE',
         'COMPÉTENCES': 'SKILLS',
         'Rigueur': 'Precision',
