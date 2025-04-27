@@ -96,8 +96,20 @@ function translateTo(lang = 'en') {
         }
         // Applique la traduction
         while ((node = walker.nextNode())) {
-            const txt = node.nodeValue.trim();
-            if (t[txt]) node.nodeValue = t[txt];
+            const txt = node.nodeValue.trim().replace(/\s+/g, ' ');
+            // Recherche stricte
+            if (t[txt]) {
+                node.nodeValue = t[txt];
+            } else {
+                // Recherche plus souple : on cherche si le texte du noeud contient une clé de traduction (utile pour la bio sur plusieurs lignes)
+                for (const key in t) {
+                    const keyNormalized = key.replace(/\s+/g, ' ');
+                    if (txt.includes(keyNormalized)) {
+                        node.nodeValue = node.nodeValue.replace(key, t[key]);
+                        break;
+                    }
+                }
+            }
             i++;
         }
         // Attributs alt des images
@@ -120,7 +132,3 @@ function translateTo(lang = 'en') {
         });
     }
 }
-
-// Exemple d'utilisation :
-// translateTo('en'); // anglais
-// translateTo('fr'); // français
