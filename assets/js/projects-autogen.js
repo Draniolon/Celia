@@ -157,9 +157,10 @@ document.addEventListener('DOMContentLoaded', renderCategories);
     ]
 };
 
-function createProjectCard(project) {
-    let html = `<div class="project-card bg-white/10 rounded-lg shadow-lg p-4 flex flex-col gap-4">`;
-    html += `<h4 class="font-bold text-xl text-white mb-2 text-center">${project.title}</h4>`;
+function createProjectCard(project, categoryLabel) {
+    let html = `<span class="block text-xs text-[#2bb8b8] font-semibold mb-1 text-center">${categoryLabel}</span>`;
+    html += `<div class="project-card bg-white/10 rounded-lg shadow-lg p-4 flex flex-col gap-4">`;
+    html += `<h4 class="font-bold text-xl text-white mb-2 text-center">titre</h4>`;
     html += `<div class="flex flex-wrap gap-2">`;
     for (const file of project.files) {
         const ext = file.split('.').pop().toLowerCase();
@@ -177,14 +178,14 @@ function createProjectCard(project) {
     return html;
 }
 
-function renderProjectsSection(sectionId, projects) {
+function renderProjectsSection(sectionId, projects, categoryLabel = "") {
     const container = document.querySelector(`#${sectionId} .grid`);
     if (!container) return;
-    container.innerHTML = projects.map(createProjectCard).join('');
+    container.innerHTML = projects.map(project => createProjectCard(project, categoryLabel)).join('');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    renderProjectsSection('pro-details', projectsData.pro);
-    renderProjectsSection('perso-details', projectsData.perso);
-    renderProjectsSection('scolaire-details', projectsData.ecole);
+    renderProjectsSection('pro-details', projectsData.pro, 'Projets Professionnels');
+    renderProjectsSection('perso-details', projectsData.perso, 'Projets Personnels');
+    renderProjectsSection('scolaire-details', projectsData.ecole, 'Projets Scolaires');
 });
