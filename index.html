@@ -105,7 +105,7 @@
             margin-bottom: 2rem;
             min-height: 210px;
             transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
-            gap: 1.25rem;
+            gap: 1rem;
         }
         .trapeze-row:hover {
             transform: scale(1.01,1.03);
@@ -539,7 +539,7 @@
     <footer class="w-full text-center text-white/70 py-0 text-sm select-none -mt-6">
         <strong id="key_70"></strong>
     </footer>
-    <script src="assets/js/projects-autogen.js"></script>
+
     <script>
         const slides = document.querySelectorAll('#carousel .slide');
         const dotsContainer = document.getElementById('carousel-dots');
@@ -576,48 +576,6 @@
         }
         document.getElementById('next').addEventListener('click', () => showSlide((index + 1) % slides.length));
         document.getElementById('prev').addEventListener('click', () => showSlide((index - 1 + slides.length) % slides.length));
-
-
-    </script>
-    <script>
-        // Drag to scroll for formation section
-        const formationScroll = document.getElementById('formation-scroll');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-        formationScroll.addEventListener('mousedown', (e) => {
-            isDown = true;
-            formationScroll.classList.add('dragging');
-            startX = e.pageX - formationScroll.offsetLeft;
-            scrollLeft = formationScroll.scrollLeft;
-        });
-        formationScroll.addEventListener('mouseleave', () => {
-            isDown = false;
-            formationScroll.classList.remove('dragging');
-        });
-        formationScroll.addEventListener('mouseup', () => {
-            isDown = false;
-            formationScroll.classList.remove('dragging');
-        });
-        formationScroll.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - formationScroll.offsetLeft;
-            const walk = (x - startX) * 1.2; // scroll speed
-            formationScroll.scrollLeft = scrollLeft - walk;
-        });
-        // Touch support
-        let touchStartX = 0;
-        let touchScrollLeft = 0;
-        formationScroll.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].pageX;
-            touchScrollLeft = formationScroll.scrollLeft;
-        });
-        formationScroll.addEventListener('touchmove', (e) => {
-            const x = e.touches[0].pageX;
-            const walk = (x - touchStartX) * 1.2;
-            formationScroll.scrollLeft = touchScrollLeft - walk;
-        });
     </script>
 
     <script>
@@ -649,105 +607,10 @@
             });
         });
     </script>
+
     <script src="assets/js/translate.js"></script>
-    <script>
-        let currentLang = 'fr';
 
-        function setActiveFlag(flag) {
-            document.getElementById('flag-fr').classList.add('flag-active');
-            document.getElementById('flag-en').classList.remove('flag-active');
-            if (flag === 'flag-en') {
-                document.getElementById('flag-fr').classList.remove('flag-active');
-                document.getElementById('flag-en').classList.add('flag-active');
-            }
-        }
-        document.getElementById('flag-fr').addEventListener('click', function () {
-            translateTo('fr');
-            setActiveFlag('flag-fr');
-        });
-        document.getElementById('flag-en').addEventListener('click', function () {
-            translateTo('en');
-            setActiveFlag('flag-en');
-        });
-        // Initialisation : activer le drapeau FR par défaut
-        setActiveFlag('flag-fr');
-    </script>
     <script>
-        // Structure des sections, h2 et h3
-        const sectionData = {
-            ecole: {
-                h1: "Projets Scolaires",
-                h2: {
-                    "Publicités": [
-                        { titre: "Cannettes Smile", image: "assets/projets/ecole/Pub/Cannettes_Smile/mock-up1.png" },
-                        { titre: "Chocolat Carmen", image: "assets/projets/ecole/Pub/Chocolats_Carmen/Base boîte D.png" },
-                        { titre: "Kleneex", image: "assets/projets/ecole/Pub/Kleneex/kleenex.png" },
-                        { titre: "Swaroski", image: "assets/projets/ecole/Pub/Swarovski/swaroski.png" }
-                    ],
-                    "Exercices": [
-                        { titre: "Depliant", image: "assets/projets/ecole/Exercices/Depliant A.png" },
-                        { titre: "Portrait Chinois", image: "assets/projets/ecole/Exercices/Portrait chinois.png" }
-                    ]
-                }
-            },
-            perso: {
-                h1: "Projets Personnels",
-                h2: {
-                    "Animations": [
-                        { titre: "Balle rembondissante", sousTitre: "key_1", image: "assets/projets/perso/Animations/Balle_rebondissante_2.gif" },
-                        { titre: "Dragon Animation", sousTitre: "Exercice d’animation 2D qui met en pratique les connaissances acquises, pour les appliquer à une créature plus complexe réalisé sur Toon Boom Harmony.", image: "assets/projets/perso/Animations/dragon_animation_base_2.gif" },
-                        { titre: "Test Animation", sousTitre: "Essai d’animation 2D courte pour essayer un style graphique plus souple sur Krita.", image: "assets/projets/perso/Animations/Test anim.gif" }
-                    ],
-                    "Compositions musicales": [
-                        { titre: "Lurking in the snow FINAL", sousTitre: "Composition originale inspirée par les derniers flocons de 2024, qui s’inscrit dans un univers d’infiltration sous tension. La progression de la musique accompagne l’avancée hypothétique d’un protagoniste indéfini à travers à dédale d’obstacles et de gardes, pour une raison qu’il ne tient qu’à vous de définir.", image: "https://as2.ftcdn.net/jpg/02/45/55/81/1000_F_245558111_VvoBPyZrDXEseNy2Y4cqmgUGzuYcscJE.jpg", customClass: "music-img" },
-                        { titre: "Something yet not so much", sousTitre: "Expérimentation musicale afin de prendre en main les outils de BandLab, notamment les effets et instruments, les multiples pistes pour créer un effet de chœurs en canon et la gestion des niveaux à travers une mélodie inspirée sur le moment.", image: "https://png.pngtree.com/background/20210712/original/pngtree-color-glare-music-banner-background-picture-image_1186650.jpg", customClass: "music-img" },
-                        { titre: "First attempt", sousTitre: "Toute première création musicale et composition réalisée sur BandLab. Le thème quelque peu chaotique est le fruit d’un essai à tous les niveaux.", image: "https://static.vecteezy.com/ti/vecteur-libre/p1/11000296-conception-de-banniere-d-onde-sonore-de-musique-abstraite-gratuit-vectoriel.jpg", customClass: "music-img" }
-                    ],
-                    "Coutures": [
-                        { titre: "Cousin", sousTitre: "Premier projet à la main pour apprendre les points les plus fréquemment utilisés en couture. Dimensions : 10x10 cm.", image: "assets/projets/perso/Couture/Coussin.jpg", customClass: "coussin-img" },
-                        { titre: "Tobias", sousTitre: "Peluche de crabe de 30 cm de large, conçu à partir d’un patron pré-existant, pour mettre en application les connaissances acquises à l’aide du coussin et me mettre au défi. Initiation à la broderie pour les détails (yeux, bouches, message sur le torse) et confrontation à de nouveaux tissus.", image: "assets/projets/perso/Couture/Tobias2.jpg" },
-                        { titre: "Yoslan", sousTitre: "Peluche de colibri de 15 cm, conçu à partir d’un patron original afin d’essayer les tissus que je prévoyais d’utiliser pour le projet suivant. Apprentissage de nouveaux points, d’erreur à ne pas commettre et d’autres essais plus ou moins concluant concernant la taille minimal des pièces à réaliser, comme pour le bec par exemple, sans compromettre le tissu.", image: "assets/projets/perso/Couture/Yoslan2.jpg", customClass: "yoslan-img" }
-                    ],
-                    "Dessins": [
-                        { titre: "Horloge", sousTitre: "Dessins divers associant deux ou trois pokémon afin d’en faire une fusion aussi égale que possible, dans leurs attributs respectifs et le mélange des couleurs de chacun.", image: "assets/projets/perso/Dessins/Horloge.png" },
-                        { titre: "Moustache", sousTitre: "Projet d’art symbolique rassemblant différents éléments associés à la vie et la mort, en une composition unique.", image: "assets/projets/perso/Dessins/Moustache.png" },
-                        { titre: "Dranio Vitrail", sousTitre: "Rassembler en une image tout ce qui nous représente, en s’appuyant sur des questions comme : « Si j’étais une plante, je serais quoi ? », le tout au sein d’une composition réalisée avec Photoshop.", image: "assets/projets/perso/Dessins/Dranio_vitrail.jpg" },
-                        { titre: "Pokemon", sousTitre: "Dessins divers associant deux ou trois pokémon afin d’en faire une fusion aussi égale que possible, dans leurs attributs respectifs et le mélange des couleurs de chacun.", image: "assets/projets/perso/Dessins/Folivane.png", customClass: "pokemon-img" }
-                    ],
-                    "Ecriture": [
-                        { titre: "Zelda", sousTitre: "key_2", image: "assets/projets/perso/Ecriture/Zelda.png" },
-                        { titre: "Abhosia", sousTitre: "Ce projet est né dix ans plus tôt. C’est un univers riche et détaillé, allant de la création à la destruction de ce lieu chimérique. Trois histoires distinctes sont prévues pour explorer les différentes époques qui ont marqué ce monde, en plus d’autres nouvelles et documents complémentaires, tous en préparation. À l’heure actuelle, seule une poignée de personnages ont été rendu public, afin de préserver toute influence extérieure sur la trame narrative prévue pour la trilogie principale.", image: "assets/projets/perso/Ecriture/Abhosia.png" },
-                        { titre: "Pokemon", sousTitre: "Exploration de la question du 'bon dresseur' à l’aide d’un récit choral qui retrace l’histoire des jeux 'Pokémon Noir et Blanc', si notre personnage pouvait réellement agir d’une manière moins rigide que celle dictée par les jeux. Sous la forme d’une enquête menée par Beladonis après l’effondrement du Palais de N, ce récit a pour but de clarifier la psychologie des différents personnages présentés dans le récit d’une manière détaillée et introspective, au sein d’une histoire baignée de mystères.", image: "assets/projets/perso/Ecriture/poke.jpg" },
-                        { titre: "Murphy", sousTitre: "Petite nouvelle parodique écrite d’une traite à propos d’une journée typique d’un certain Murphy, chargé de surveiller et restreindre les conversations problématique de personnes suspectes, afin de rassembler assez de preuves pour pouvoir les arrêter. Membre de la brigade de la préservation des insectes, Murphy est un agent qui vit dans un manoir en compagnie de différents personnages hauts en couleurs qui lui mènent la vie dure, au sein d’une routine qu’il subit bien malgré lui.", image: "assets/projets/perso/Ecriture/murphy.png" }
-                    ]
-                }
-            },
-            pro: {
-                h1: "Projets Professionnels",
-                h2: {
-                    "Couverture de Livre": [
-                        { titre: "Le printemps renait toujours", sousTitre: "Illustration sur Krita pour les versions numérique, reliée et brochée du livre de Luny Asthiers.", image: "assets/projets/pro/Couverture_de_Livre/printemps.png" },
-                        { titre: "Couverture livre mockup", sousTitre: "Mise en page sur Canva d’une couverture incluant un phœnix, ainsi que du texte qui peut être remplacé aisément pour un vrai titre et un nom d’auteur.", image: "assets/projets/pro/Couverture_de_Livre/3tours.png" }
-                    ],
-                    "Illustrations": [
-                        { titre: "freelance_fourth_wing", sousTitre: "Commande réalisée sur Krita à la demande d’une cliente, incluant quatre personnages et un décor simple.", image: "assets/projets/pro/Illustrations/freelance_fourth_wing.png" },
-                        { titre: "luny_Illu_renard", sousTitre: "Montage réalisé sur Photoshop pour Luny Asthiers.", image: "assets/projets/pro/Illustrations/luny_Illu_renard.png" }
-                    ],
-                    "Logos": [
-                        { titre: "Logo_pour_Luny", sousTitre: "Conception de Aster (le renard) et mise en situation de celui-ci sur Krita selon les demandes de Luny Asthiers. Cette création est antérieure à mes études en graphisme.", image: "assets/projets/pro/Logos/Logo_pour_Luny.png" }
-                    ],
-                    "Reseau Sociaux": [
-                        { titre: "Post Wandel", sousTitre: "Communication illustrée pour l’occasion de la sortie de Wandel en octobre 2024.", image: "assets/projets/pro/Reseau_Sociaux/Post Wandel13.png" },
-                        { titre: "Hamlet", sousTitre: "Mise en avant d’une citation de Hamlet avec des visuels et d’une mise en page attirante sur Canva.", image: "assets/projets/pro/Reseau_Sociaux/Post_Hamlet1.png" },
-                        { titre: "Harry Potter", sousTitre: "Mise en avant d’une citation de Harry Potter à l’école des sorciers et avec une mise en page et des visuels parlants sur Canva.", image: "assets/projets/pro/Reseau_Sociaux/Post_Harry_Potter4.png" }
-                    ],
-                    "Tutoriel": [
-                        { titre: "Petit Guide du Stagiaire", sousTitre: "Cadeau de départ pour la Mairie de Montigny-le-Bretonneux afin de pallier à la méconnaissance parfois des stagiaires qui sont placés devant le 'Guide Pratique de la Ville' sans connaissance préalable du logiciel InDesign. Prise d’initiative pour combler un besoin utile à la bonne continuation du projet annuel dans de bonnes conditions.", image: "assets/projets/pro/Tutoriels/Guides pratiques.png" }
-                    ]
-                }
-            }
-        };
-
         function renderSectionStructure(sectionKey) {
             // Vide tous les containers
             document.querySelectorAll('.section-structure').forEach(div => div.innerHTML = '');
@@ -756,17 +619,13 @@
 
             let html = '';
             let catIndex = 0;
-            let categories;
-            if (sectionKey === 'perso') {
-                categories = ['Dessins', 'Animations', 'Ecriture', 'Compositions musicales', 'Coutures'];
-            } else {
-                categories = Object.keys(section.h2);
-            }
+            let categories = Object.keys(section.h2);
+            
             categories.forEach((h2, idx) => {
                 if (!section.h2[h2]) return;
                 const h3s = section.h2[h2];
                 html += `
-                <h2 class="text-2xl font-bold text-white text-opacity-70 mb-4 text-center">${h2}</h2>
+                <h2 class="text-2xl font-bold text-white text-opacity-70 mb-4 text-center">${getTranslation(h2, currentLang)}</h2>
                 `;
                 h3s.forEach((h3, idx) => {
                     // Supporte les deux formats : string ou objet
@@ -783,7 +642,7 @@
                                 <img src="${image}" alt="Image projet ${titre}" style="width:100%;object-fit:cover;display:block;margin:auto;" class="${customClass}" />
                             </div>
                             <div class="trapeze-content">
-                                <h3 class="text-lg font-semibold text-black mb-2 text-center">${titre}</h3>
+                                <h3 class="text-lg font-semibold text-black mb-2 text-center">${getTranslation(titre, currentLang)}</h3>
 <p class='text-sm text-gray-400 text-center mb-2'>${sousTitre}</p>
                             </div>
                         </div>
@@ -793,7 +652,7 @@
                         html += `
                         <div class="trapeze-row">
                             <div class="trapeze-content right">
-                                <h3 class="text-lg font-semibold text-black mb-2 text-center">${titre}</h3>
+                                <h3 class="text-lg font-semibold text-black mb-2 text-center">${getTranslation(titre, currentLang)}</h3>
 <p class='text-sm text-gray-400 text-center mb-2'>${sousTitre}</p>
                             </div>
                             <div class="trapeze-img right">
@@ -820,5 +679,4 @@
         });
     </script>
 </body>
-
 </html>
