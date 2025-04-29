@@ -101,7 +101,26 @@
         .tooltip-bulle.top-full {
             @apply top-full mt-2;
         }
-</style>
+    </style>
+    <style>
+        #scrollToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #1a7f7f;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        #scrollToTop::before {
+            content: '\25B2';
+            font-size: 20px;
+        }
+    </style>
 </head>
 
 <body class="min-h-screen flex flex-col bg-[#2bb8b8] text-white font-['Roboto',sans-serif]" style="overflow:visible;">
@@ -389,6 +408,7 @@
                 </div>
             </div>
     </main>
+    <button id="scrollToTop" onclick="scrollToTop()">⬆️</button>
     <footer class="w-full text-center text-white/70 py-0 text-sm select-none -mt-6">
         <strong id="key_70"></strong>
     </footer>
@@ -397,6 +417,19 @@
     <script src="assets/js/projectCards.js"></script>
     <script src="assets/js/translate.js"></script>
     <script src="assets/js/projectCardsObjects.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const scrollToTopButton = document.getElementById('scrollToTop');
+            if (window.scrollY > 200) {
+                scrollToTopButton.style.display = 'block';
+            } else {
+                scrollToTopButton.style.display = 'none';
+            }
+        });
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 
 </body>
 </html>
