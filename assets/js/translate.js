@@ -97,7 +97,38 @@ const translationsList = [
   { key: "key_93", fr: "Pierre", en: "Stone"},
   { key: "key_94", fr: "Étude photographique de la pierre dans la ville à travers d’un traitement graphique traditionnel qui vous invite à une promenade parmi les allées de Montigny-le-Bretonneux.", en: "Study of the stone in the city with a traditionnal processing on pictures gathered in a booklet. This project invites you to travel through the streets of Montigny-le-Bretonneux."},
   { key: "key_95", fr: "Portrait Chinois", en: "CHINESE PORTRAIT"},
-  { key: "key_96", fr: "Rassembler en une image tout ce qui nous représente, en s’appuyant sur des questions comme&nbsp;: «&nbsp;Si j’étais une plante, je serais quoi&nbsp;?&nbsp;», le tout au sein d’une composition réalisée avec Photoshop.", en: "Gathering in one picture what defines us, leaning on question like&nbsp;: 'If I could be a plant, what would I be?' inside a composition made on Photoshop."}
+  { key: "key_96", fr: "Rassembler en une image tout ce qui nous représente, en s’appuyant sur des questions comme&nbsp;: «&nbsp;Si j’étais une plante, je serais quoi&nbsp;?&nbsp;», le tout au sein d’une composition réalisée avec Photoshop.", en: "Gathering in one picture what defines us, leaning on question like&nbsp;: 'If I could be a plant, what would I be?' inside a composition made on Photoshop."},
+  { key: "key_97", fr: "Le printemps renait toujours", en: "The spring is reborn" },
+  { key: "key_98", fr: "Illustration sur Krita pour les versions numérique, reliée et brochée du livre de Luny Asthiers.", en: "Illustration on Krita for the digital, hardcover and paperback versions of Luny Asthiers’ book." },
+  { key: "key_99", fr: "Couverture livre mockup", en: "Book cover mockup" },
+  { key: "key_100", fr: "Mise en page sur Canva d’une couverture incluant un phœnix, ainsi que du texte qui peut être remplacé aisément pour un vrai titre et un nom d’auteur.", en: "Layout on Canva of a cover including a phoenix, as well as text that can be easily replaced for a real title and author name." },
+  { key: "key_101", fr: "Monde Fantastique", en: "Fantasy World" },
+  { key: "key_102", fr: "Commande réalisée sur Krita à la demande d’une cliente, incluant quatre personnages et un décor simple.", en: "Commission made on Krita for a client, including four characters and a simple background." },
+  { key: "key_103", fr: "Renard", en: "Fox" },
+  { key: "key_104", fr: "Montage réalisé sur Photoshop pour Luny Asthiers.", en: "Montage made on Photoshop for Luny Asthiers." },
+  { key: "key_105", fr: "Logo", en: "Logo" },
+  { key: "key_106", fr: "Conception de Aster (le renard) et mise en situation de celui-ci sur Krita selon les demandes de Luny Asthiers. Cette création est antérieure à mes études en graphisme.", en: "Design of Aster (the fox) and its placement on Krita according to Luny Asthiers’ requests. This creation predates my graphic design studies." },
+  { key: "key_107", fr: "Post Wandel", en: "Wandel Post" },
+  { key: "key_108", fr: "Communication illustrée pour l’occasion de la sortie de Wandel en octobre 2024.", en: "Illustrated communication for the release of Wandel in October 2024." },
+  { key: "key_109", fr: "Hamlet", en: "Hamlet" },
+  { key: "key_110", fr: "Mise en avant d’une citation de Hamlet avec des visuels et d’une mise en page attirante sur Canva.", en: "Highlighting a Hamlet quote with visuals and an attractive layout on Canva." },
+  { key: "key_111", fr: "Harry Potter", en: "Harry Potter" },
+  { key: "key_112", fr: "Mise en avant d’une citation de Harry Potter à l’école des sorciers et avec une mise en page et des visuels parlants sur Canva.", en: "Highlighting a quote from Harry Potter and the Philosopher’s Stone with a compelling layout and visuals on Canva." },
+  { key: "key_113", fr: "Petit Guide du Stagiaire", en: "Intern's Guide" },
+  { key: "key_114", fr: "Cadeau de départ pour la Mairie de Montigny-le-Bretonneux afin de pallier à la méconnaissance parfois des stagiaires qui sont placés devant le 'Guide Pratique de la Ville' sans connaissance préalable du logiciel InDesign. Prise d’initiative pour combler un besoin utile à la bonne continuation du projet annuel dans de bonnes conditions.", en: "Farewell gift for the Montigny-le-Bretonneux City Hall to address the lack of knowledge sometimes faced by interns who are given the 'City Practical Guide' without prior knowledge of InDesign. Initiative to fill a useful need for the smooth continuation of the annual project in good conditions." },
+  { key: "key_115", fr: "Balle rembondissante", en: "Bouncing ball" },
+  { key: "key_116", fr: "Dragon Animation", en: "Dragon Animation" },
+  { key: "key_117", fr: "Test Animation", en: "Test Animation" },
+  { key: "key_118", fr: "Zelda", en: "Zelda" },
+  { key: "key_127", fr: "Ce projet est né dix ans plus tôt. C’est un univers riche et détaillé, allant de la création à la destruction de ce lieu chimérique. Trois histoires distinctes sont prévues pour explorer les différentes époques qui ont marqué ce monde, en plus d’autres nouvelles et documents complémentaires, tous en préparation. À l’heure actuelle, seule une poignée de personnages ont été rendu public, afin de préserver toute influence extérieure sur la trame narrative prévue pour la trilogie principale.", en: "This project was born ten years earlier. It is a rich and detailed universe, from the creation to the destruction of this chimerical place. Three distinct stories are planned to explore the different eras that marked this world, plus other short stories and complementary documents, all in preparation. Currently, only a handful of characters have been made public, to preserve any outside influence on the planned narrative for the main trilogy." },
+  { key: "key_128", fr: "Exploration de la question du 'bon dresseur' à l’aide d’un récit choral qui retrace l’histoire des jeux 'Pokémon Noir et Blanc', si notre personnage pouvait réellement agir d’une manière moins rigide que celle dictée par les jeux. Sous la forme d’une enquête menée par Beladonis après l’effondrement du Palais de N, ce récit a pour but de clarifier la psychologie des différents personnages présentés dans le récit d’une manière détaillée et introspective, au sein d’une histoire baignée de mystères.", en: "Exploration of the 'good trainer' question through a choral story that retraces the history of the 'Pokémon Black and White' games, if our character could really act in a less rigid way than dictated by the games. In the form of an investigation led by Beladonis after the collapse of N's Castle, this story aims to clarify the psychology of the various characters presented in the narrative in a detailed and introspective manner, within a mystery-filled story." },
+  { key: "key_129", fr: "Petite nouvelle parodique écrite d’une traite à propos d’une journée typique d’un certain Murphy, chargé de surveiller et restreindre les conversations problématique de personnes suspectes, afin de rassembler assez de preuves pour pouvoir les arrêter. Membre de la brigade de la préservation des insectes, Murphy est un agent qui vit dans un manoir en compagnie de différents personnages hauts en couleurs qui lui mènent la vie dure, au sein d’une routine qu’il subit bien malgré lui.", en: "Short parodic story written in one go about a typical day of a certain Murphy, tasked with monitoring and restricting problematic conversations of suspicious people, in order to gather enough evidence to arrest them. Member of the insect preservation brigade, Murphy is an agent living in a mansion with various colorful characters who make his life difficult, within a routine he endures despite himself." },
+  { key: "key_130", fr: "Lurking in the snow FINAL", en: "Lurking in the snow FINAL" },
+  { key: "key_131", fr: "Something yet not so much", en: "Something yet not so much" },
+  { key: "key_132", fr: "First attempt", en: "First attempt" },
+  { key: "key_133", fr: "Cousin", en: "Cousin" },
+  { key: "key_134", fr: "Tobias", en: "Tobias" },
+  { key: "key_135", fr: "Yoslan", en: "Yoslan" },
 ];
 
 // Stockage des textes originaux
@@ -153,9 +184,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('flag-en')?.addEventListener('click', () => applyTranslations('en'));
 });
 
-
-
-
+// Gere l'activation des drapeaux
 let currentLang = 'fr';
 function setActiveFlag(flag) {
     document.getElementById('flag-fr').classList.add('flag-active');
@@ -171,6 +200,7 @@ document.getElementById('flag-fr').addEventListener('click', function () {
 document.getElementById('flag-en').addEventListener('click', function () {
     setActiveFlag('flag-en');
 });
+
 // Initialisation : activer le drapeau FR par défaut
 setActiveFlag('flag-fr');
 
@@ -204,25 +234,25 @@ const sectionData = {
                 { titre: "Pokemon", sousTitre: "key_10", image: "assets/projets/perso/Dessins/Folivane.png", customClass: "pokemon-img" }
             ],
             "key_76": [
-                { titre: "key_1", sousTitre: "key_1", image: "assets/projets/perso/Animations/Balle_rebondissante_2.gif" },
-                { titre: "key_2", sousTitre: "key_2", image: "assets/projets/perso/Animations/dragon_animation_base_2.gif" },
-                { titre: "key_3", sousTitre: "key_3", image: "assets/projets/perso/Animations/Test anim.gif" }
+                { titre: "key_115", sousTitre: "key_1", image: "assets/projets/perso/Animations/Balle_rebondissante_2.gif" },
+                { titre: "key_116", sousTitre: "key_2", image: "assets/projets/perso/Animations/dragon_animation_base_2.gif" },
+                { titre: "key_117", sousTitre: "key_3", image: "assets/projets/perso/Animations/Test anim.gif" }
             ],
             "key_77": [
-                { titre: "Zelda", sousTitre: "key_2", image: "assets/projets/perso/Ecriture/Zelda.png" },
-                { titre: "Abhosia", sousTitre: "Ce projet est né dix ans plus tôt. C’est un univers riche et détaillé, allant de la création à la destruction de ce lieu chimérique. Trois histoires distinctes sont prévues pour explorer les différentes époques qui ont marqué ce monde, en plus d’autres nouvelles et documents complémentaires, tous en préparation. À l’heure actuelle, seule une poignée de personnages ont été rendu public, afin de préserver toute influence extérieure sur la trame narrative prévue pour la trilogie principale.", image: "assets/projets/perso/Ecriture/Abhosia.png" },
-                { titre: "Pokemon", sousTitre: "Exploration de la question du 'bon dresseur' à l’aide d’un récit choral qui retrace l’histoire des jeux 'Pokémon Noir et Blanc', si notre personnage pouvait réellement agir d’une manière moins rigide que celle dictée par les jeux. Sous la forme d’une enquête menée par Beladonis après l’effondrement du Palais de N, ce récit a pour but de clarifier la psychologie des différents personnages présentés dans le récit d’une manière détaillée et introspective, au sein d’une histoire baignée de mystères.", image: "assets/projets/perso/Ecriture/poke.jpg" },
-                { titre: "Murphy", sousTitre: "Petite nouvelle parodique écrite d’une traite à propos d’une journée typique d’un certain Murphy, chargé de surveiller et restreindre les conversations problématique de personnes suspectes, afin de rassembler assez de preuves pour pouvoir les arrêter. Membre de la brigade de la préservation des insectes, Murphy est un agent qui vit dans un manoir en compagnie de différents personnages hauts en couleurs qui lui mènent la vie dure, au sein d’une routine qu’il subit bien malgré lui.", image: "assets/projets/perso/Ecriture/murphy.png" }
+                { titre: "key_118", sousTitre: "key_98", image: "assets/projets/perso/Ecriture/Zelda.png" },
+                { titre: "Abhosia", sousTitre: "key_127", image: "assets/projets/perso/Ecriture/Abhosia.png" },
+                { titre: "Pokemon", sousTitre: "key_128", image: "assets/projets/perso/Ecriture/poke.jpg" },
+                { titre: "Murphy", sousTitre: "key_129", image: "assets/projets/perso/Ecriture/murphy.png" }
             ],
             "key_78": [
-                { titre: "key_4", sousTitre: "key_4", image: "https://as2.ftcdn.net/jpg/02/45/55/81/1000_F_245558111_VvoBPyZrDXEseNy2Y4cqmgUGzuYcscJE.jpg", customClass: "music-img" },
-                { titre: "key_5", sousTitre: "key_5", image: "https://png.pngtree.com/background/20210712/original/pngtree-color-glare-music-banner-background-picture-image_1186650.jpg", customClass: "music-img" },
-                { titre: "key_6", sousTitre: "key_6", image: "https://static.vecteezy.com/ti/vecteur-libre/p1/11000296-conception-de-banniere-d-onde-sonore-de-musique-abstraite-gratuit-vectoriel.jpg", customClass: "music-img" }
+                { titre: "key_130", sousTitre: "key_4", image: "https://as2.ftcdn.net/jpg/02/45/55/81/1000_F_245558111_VvoBPyZrDXEseNy2Y4cqmgUGzuYcscJE.jpg", customClass: "music-img" },
+                { titre: "key_131", sousTitre: "key_5", image: "https://png.pngtree.com/background/20210712/original/pngtree-color-glare-music-banner-background-picture-image_1186650.jpg", customClass: "music-img" },
+                { titre: "key_132", sousTitre: "key_6", image: "https://static.vecteezy.com/ti/vecteur-libre/p1/11000296-conception-de-banniere-d-onde-sonore-de-musique-abstraite-gratuit-vectoriel.jpg", customClass: "music-img" }
             ],
             "key_79": [
-                { titre: "key_7", sousTitre: "key_7", image: "assets/projets/perso/Couture/Coussin.jpg", customClass: "coussin-img" },
-                { titre: "key_8", sousTitre: "key_8", image: "assets/projets/perso/Couture/Tobias2.jpg" },
-                { titre: "key_9", sousTitre: "key_9", image: "assets/projets/perso/Couture/Yoslan2.jpg", customClass: "yoslan-img" }
+                { titre: "key_133", sousTitre: "key_7", image: "assets/projets/perso/Couture/Coussin.jpg", customClass: "coussin-img" },
+                { titre: "key_134", sousTitre: "key_8", image: "assets/projets/perso/Couture/Tobias2.jpg" },
+                { titre: "key_135", sousTitre: "key_9", image: "assets/projets/perso/Couture/Yoslan2.jpg", customClass: "yoslan-img" }
             ]
         }
     },
@@ -230,23 +260,23 @@ const sectionData = {
         h1: "key_66",
         h2: {
             "key_77": [
-                { titre: "Le printemps renait toujours", sousTitre: "Illustration sur Krita pour les versions numérique, reliée et brochée du livre de Luny Asthiers.", image: "assets/projets/pro/Couverture_de_Livre/printemps.png" },
-                { titre: "Couverture livre mockup", sousTitre: "Mise en page sur Canva d’une couverture incluant un phœnix, ainsi que du texte qui peut être remplacé aisément pour un vrai titre et un nom d’auteur.", image: "assets/projets/pro/Couverture_de_Livre/3tours.png" }
+                { titre: "key_97", sousTitre: "key_98", image: "assets/projets/pro/Couverture_de_Livre/printemps.png" },
+                { titre: "key_99", sousTitre: "key_100", image: "assets/projets/pro/Couverture_de_Livre/3tours.png" }
             ],
             "key_78": [
-                { titre: "freelance_fourth_wing", sousTitre: "Commande réalisée sur Krita à la demande d’une cliente, incluant quatre personnages et un décor simple.", image: "assets/projets/pro/Illustrations/freelance_fourth_wing.png" },
-                { titre: "luny_Illu_renard", sousTitre: "Montage réalisé sur Photoshop pour Luny Asthiers.", image: "assets/projets/pro/Illustrations/luny_Illu_renard.png" }
+                { titre: "key_101", sousTitre: "key_102", image: "assets/projets/pro/Illustrations/freelance_fourth_wing.png" },
+                { titre: "key_103", sousTitre: "key_104", image: "assets/projets/pro/Illustrations/luny_Illu_renard.png" }
             ],
             "key_79": [
-                { titre: "Logo_pour_Luny", sousTitre: "Conception de Aster (le renard) et mise en situation de celui-ci sur Krita selon les demandes de Luny Asthiers. Cette création est antérieure à mes études en graphisme.", image: "assets/projets/pro/Logos/Logo_pour_Luny.png" }
+                { titre: "key_105", sousTitre: "key_106", image: "assets/projets/pro/Logos/Logo_pour_Luny.png" }
             ],
             "key_80": [
-                { titre: "Post Wandel", sousTitre: "Communication illustrée pour l’occasion de la sortie de Wandel en octobre 2024.", image: "assets/projets/pro/Reseau_Sociaux/Post Wandel13.png" },
-                { titre: "Hamlet", sousTitre: "Mise en avant d’une citation de Hamlet avec des visuels et d’une mise en page attirante sur Canva.", image: "assets/projets/pro/Reseau_Sociaux/Post_Hamlet1.png" },
-                { titre: "Harry Potter", sousTitre: "Mise en avant d’une citation de Harry Potter à l’école des sorciers et avec une mise en page et des visuels parlants sur Canva.", image: "assets/projets/pro/Reseau_Sociaux/Post_Harry_Potter4.png" }
+                { titre: "key_107", sousTitre: "key_108", image: "assets/projets/pro/Reseau_Sociaux/Post Wandel13.png" },
+                { titre: "key_109", sousTitre: "key_110", image: "assets/projets/pro/Reseau_Sociaux/Post_Hamlet1.png" },
+                { titre: "key_111", sousTitre: "key_112", image: "assets/projets/pro/Reseau_Sociaux/Post_Harry_Potter4.png" }
             ],
             "key_81": [
-                { titre: "Petit Guide du Stagiaire", sousTitre: "Cadeau de départ pour la Mairie de Montigny-le-Bretonneux afin de pallier à la méconnaissance parfois des stagiaires qui sont placés devant le 'Guide Pratique de la Ville' sans connaissance préalable du logiciel InDesign. Prise d’initiative pour combler un besoin utile à la bonne continuation du projet annuel dans de bonnes conditions.", image: "assets/projets/pro/Tutoriels/Guides pratiques.png" }
+                { titre: "key_113", sousTitre: "key_114", image: "assets/projets/pro/Tutoriels/Guides pratiques.png" }
             ]
         }
     }
