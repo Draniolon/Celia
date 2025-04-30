@@ -1,0 +1,109 @@
+.trapeze-row {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 2rem;
+    min-height: 210px;
+    transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
+    gap: 1rem;
+}
+.trapeze-row:hover {
+    transform: scale(1.01,1.03);
+    box-shadow: 0 8px 32px 0 #0003;
+}
+.trapeze-img, .trapeze-content {
+    transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.2s;
+}
+.trapeze-row:hover .trapeze-img,
+.trapeze-row:hover .trapeze-content {
+    transform: scale(1.01);
+    z-index: 2;
+    box-shadow: 0 8px 32px 0 #0002;
+}
+.trapeze-img {
+    width: 500px;
+    flex: 0 0 500px;
+    max-width: 500px;
+    min-width: 0;
+    background: linear-gradient(120deg,#b2fefa,#0ed2f7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    min-height: 120px;
+    border-radius: 1.5rem 0 0 1.5rem;
+    margin: 0;
+    overflow: hidden;
+}
+.trapeze-img img {
+    border-radius: 0;
+    max-width: 500px;
+    max-height: 500px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.trapeze-img.img-left img {
+    border-radius: 1.5rem 0 0 1.5rem;
+    max-width: 500px;
+    max-height: 500px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.trapeze-img.right img {
+    border-radius: 0 1.5rem 1.5rem 0;
+    max-width: 500px;
+    max-height: 500px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.trapeze-img.right {
+    width: 500px;
+    flex: 0 0 500px;
+    max-width: 500px;
+    min-width: 0;
+    background: linear-gradient(120deg,#fad961,#f76b1c);
+    border-radius: 0 1.5rem 1.5rem 0;
+    margin: 0;
+    overflow: hidden;
+}
+.trapeze-content {
+    flex: 1 1 0%;
+    background: rgba(255,255,255,0.5);
+    border-radius: 0 1.5rem 1.5rem 0;
+    box-shadow: 0 2px 16px 0 #0002;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    margin: 0;
+    min-width: 200px;
+    width: 100%;
+    max-width: none;
+}
+.trapeze-content.right {
+    border-radius: 1.5rem 0 0 1.5rem;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+}
+
+@media (max-width: 700px) {
+    .trapeze-row { flex-direction: column; }
+    .trapeze-img, .trapeze-img.right {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+    .trapeze-content, .trapeze-content.right {
+        max-width: 100% !important;
+    }
+    .trapeze-img, .trapeze-img.right, .trapeze-content, .trapeze-content.right {
+        clip-path: none !important;
+        margin: 0 !important;
+        border-radius: 1.5rem !important;
+    }
+}
