@@ -104,14 +104,22 @@
     </style>
     <style>
         #scrollToTop {
-            width: 50px; /* Assurez-vous que la largeur et la hauteur sont égales */
+            opacity: 0; /* Rendre invisible */
+            pointer-events: none; /* Désactiver les interactions */
+            transition: opacity 0.3s ease; /* Transition fluide pour l'apparition */
+            width: 50px;
             height: 50px;
-            border-radius: 50%; /* Rend le conteneur parfaitement rond */
-            display: flex; /* Centrer l'icône */
+            border-radius: 50%;
+            display: flex;
             align-items: center;
             justify-content: center;
-            background-color: rgba(26, 127, 127, 0.8); /* Couleur avec transparence */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optionnel : ajoute une ombre pour un effet visuel */
+            background-color: rgba(26, 127, 127, 0.8);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        #scrollToTop.visible {
+            opacity: 1; /* Rendre visible */
+            pointer-events: auto; /* Activer les interactions */
         }
     </style>
 </head>
@@ -411,12 +419,12 @@
     <script src="assets/js/translate.js"></script>
     <script src="assets/js/projectCardsObjects.js"></script>
     <script>
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const scrollToTopButton = document.getElementById('scrollToTop');
             if (window.scrollY > 200) {
-                scrollToTopButton.style.display = 'block';
+                scrollToTopButton.classList.add('visible');
             } else {
-                scrollToTopButton.style.display = 'none';
+                scrollToTopButton.classList.remove('visible');
             }
         });
         function scrollToTop() {
