@@ -116,10 +116,6 @@
             cursor: pointer;
             z-index: 1000;
         }
-        #scrollToTop::before {
-            content: '\25B2';
-            font-size: 20px;
-        }
     </style>
 </head>
 
@@ -408,7 +404,7 @@
                 </div>
             </div>
     </main>
-    <button id="scrollToTop" onclick="scrollToTop()">⬆️</button>
+    <button id="scrollToTop" onclick="scrollToTop()" class="fixed bottom-4 right-4 z-50"><i class="fa-solid fa-arrow-up"></i></button>
     <footer class="w-full text-center text-white/70 py-0 text-sm select-none -mt-6">
         <strong id="key_70"></strong>
     </footer>

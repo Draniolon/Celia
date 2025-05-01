@@ -44,6 +44,7 @@
     height: 100%;
     object-fit: contain;
 }
+
 .trapeze-img.img-left img {
     border-radius: 1.5rem 0 0 1.5rem;
     max-width: 500px;
@@ -52,6 +53,7 @@
     height: 100%;
     object-fit: contain;
 }
+
 .trapeze-img.right img {
     border-radius: 0 1.5rem 1.5rem 0;
     max-width: 500px;
@@ -72,7 +74,7 @@
 }
 .trapeze-content {
     flex: 1 1 0%;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.8);
     border-radius: 0 1.5rem 1.5rem 0;
     box-shadow: 0 2px 16px 0 #0002;
     display: flex;
