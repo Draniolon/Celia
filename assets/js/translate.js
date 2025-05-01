@@ -207,7 +207,7 @@ setActiveFlag('flag-fr');
 
 
 
-// Structure des sections, h2 et h3
+// Structure des sections, h2 et h4
 const sectionData = {
     ecole: {
         h1: "key_67",

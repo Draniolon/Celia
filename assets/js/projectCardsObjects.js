@@ -10,17 +10,17 @@ function renderSectionStructure(sectionKey) {
     
     categories.forEach((h2, idx) => {
         if (!section.h2[h2]) return;
-        const h3s = section.h2[h2];
+        const h4s = section.h2[h2];
         html += `
         <h2 class="text-2xl font-bold text-white text-opacity-70 mb-4 text-center">${getTranslation(h2, currentLang)}</h2>
         `;
-        h3s.forEach((h3, idx) => {
+        h4s.forEach((h4, idx) => {
             // Supporte les deux formats : string ou objet
-            let titre = h3.titre || h3;
-            let sousTitre = getTranslation(h3.sousTitre, currentLang) || '';
-            let image = h3.image || 'assets/images/profil/default.png'; // image par défaut
+            let titre = h4.titre || h4;
+            let sousTitre = getTranslation(h4.sousTitre, currentLang) || '';
+            let image = h4.image || 'assets/images/profil/default.png'; // image par défaut
             const isEven = (catIndex + idx) % 2 === 0;
-            let customClass = h3.customClass ? h3.customClass : '';
+            let customClass = h4.customClass ? h4.customClass : '';
             if (isEven) {
                 // Image à gauche, bloc à droite
                 html += `
@@ -29,7 +29,7 @@ function renderSectionStructure(sectionKey) {
                         <img src="${image}" alt="Image projet ${titre}" style="width:100%;object-fit:cover;display:block;margin:auto;" class="${customClass}" />
                     </div>
                     <div class="trapeze-content">
-                        <h3 class="text-lg font-semibold text-black mb-2 text-center">${getTranslation(titre, currentLang)}</h3>
+                        <h4 class="text-lg font-semibold text-black mb-2 text-center">${getTranslation(titre, currentLang)}</h4>
 <p class='text-sm text-gray-400 text-center mb-2'>${sousTitre}</p>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ function renderSectionStructure(sectionKey) {
                 html += `
                 <div class="trapeze-row">
                     <div class="trapeze-content right">
-                        <h3 class="text-lg font-semibold text-black mb-2 text-center">${getTranslation(titre, currentLang)}</h3>
+                        <h4 class="text-lg font-semibold text-black mb-2 text-center">${getTranslation(titre, currentLang)}</h4>
 <p class='text-sm text-gray-400 text-center mb-2'>${sousTitre}</p>
                     </div>
                     <div class="trapeze-img right">
@@ -49,7 +49,7 @@ function renderSectionStructure(sectionKey) {
                 `;
             }
         });
-        catIndex += h3s.length;
+        catIndex += h4s.length;
     });
 
     document.getElementById(`${sectionKey}-structure`).innerHTML = html;

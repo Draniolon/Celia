@@ -101,11 +101,31 @@
         .tooltip-bulle.top-full {
             @apply top-full mt-2;
         }
-    </style>
-    <style>
+
+        h2 {
+            border: 4px solid rgba(255, 255, 255, 0.5); /* Bordure blanche avec 50% de transparence */
+            padding: 10px; /* Optionnel : ajoute un espace entre le texte et la bordure */
+            border-radius: 5px; /* Optionnel : arrondit légèrement les coins */
+        }
+
+        .highlighted-title {
+            font-size: 2rem; /* Taille du texte */
+            font-weight: bold; /* Texte en gras */
+            color: rgba(255, 255, 255, 0.9); /* Couleur blanche avec légère transparence */
+            text-align: center; /* Centrer le texte */
+            border: 4px solid rgba(255, 255, 255, 0.5); /* Bordure blanche avec transparence */
+            padding: 15px; /* Espacement interne */
+            border-radius: 10px; /* Coins arrondis */
+            background: rgba(43, 184, 184, 0.2); /* Fond légèrement coloré */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de profondeur */
+            margin-bottom: 20px; /* Espacement en bas */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
+        }
+
+        /* Scrool Bar */
         #scrollToTop {
             opacity: 0; /* Rendre invisible */
-            pointer-events: none; /* Désactiver les interactions */
+            pointer-events: none; /* Désactiver les interFactions */
             transition: opacity 0.3s ease; /* Transition fluide pour l'apparition */
             width: 50px;
             height: 50px;
@@ -388,20 +408,17 @@
 
                 <!-- Sections de détails des projets -->
                 <div class="project-details hidden" id="pro-details">
-                    <div class="w-full h-1 bg-white/50 my-8"></div>
-                    <h3 id="key_66" class="text-3xl font-bold text-center mb-8"></h3>
+                    <h3 id="key_66" class="highlighted-title"></h3>
                     <div class="section-structure" id="pro-structure"></div>
                 </div>
 
                 <div class="project-details hidden" id="ecole-details">
-                    <div class="w-full h-1 bg-white/50 my-8"></div>
-                    <h3 id="key_67" class="text-3xl font-bold text-center mb-8"></h3>
+                    <h3 id="key_67" class="highlighted-title"></h3>
                     <div class="section-structure" id="ecole-structure"></div>
                 </div>
 
                 <div class="project-details hidden" id="perso-details">
-                    <div class="w-full h-1 bg-white/50 my-8"></div>
-                    <h3 id="key_68" class="text-3xl font-bold text-center mb-8"></h3>
+                    <h3 id="key_68" class="highlighted-title"></h3>
                     <div class="section-structure" id="perso-structure"></div>
                 </div>
             </div>
