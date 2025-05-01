@@ -176,38 +176,6 @@ function applyTranslations(lang = 'fr') {
     });
 }
 
-// Gere l'activation des drapeaux
-let currentLang = 'fr';
-
-// Au chargement de la page, on applique la traduction française par défaut
-window.addEventListener('DOMContentLoaded', () => {
-    applyTranslations('fr');
-    // Gestion des drapeaux
-    document.getElementById('flag-fr')?.addEventListener('click', () => applyTranslations('fr'));
-    document.getElementById('flag-en')?.addEventListener('click', () => applyTranslations('en'));
-});
-
-function setActiveFlag(flag) {
-    document.getElementById('flag-fr').classList.add('flag-active');
-    document.getElementById('flag-en').classList.remove('flag-active');
-    if (flag === 'flag-en') {
-        document.getElementById('flag-fr').classList.remove('flag-active');
-        document.getElementById('flag-en').classList.add('flag-active');
-    }
-}
-document.getElementById('flag-fr').addEventListener('click', function () {
-    setActiveFlag('flag-fr');
-});
-document.getElementById('flag-en').addEventListener('click', function () {
-    setActiveFlag('flag-en');
-});
-
-// Initialisation : activer le drapeau FR par défaut
-setActiveFlag('flag-fr');
-
-
-
-
 // Structure des sections, h2 et h4
 const sectionData = {
     ecole: {
@@ -282,3 +250,31 @@ const sectionData = {
         }
     }
 };
+
+// Gere l'activation des drapeaux
+let currentLang = 'fr';
+
+function setActiveFlag(flag) {
+    document.getElementById('flag-fr').classList.add('flag-active');
+    document.getElementById('flag-en').classList.remove('flag-active');
+    if (flag === 'flag-en') {
+        document.getElementById('flag-fr').classList.remove('flag-active');
+        document.getElementById('flag-en').classList.add('flag-active');
+    }
+}
+document.getElementById('flag-fr').addEventListener('click', function () {
+    setActiveFlag('flag-fr');
+    currentLang = 'fr';
+    applyTranslations('fr')
+});
+document.getElementById('flag-en').addEventListener('click', function () {
+    setActiveFlag('flag-en');
+    currentLang = 'en';
+    applyTranslations('en')
+});
+
+// Au chargement de la page, on applique la traduction française par défaut
+window.addEventListener('DOMContentLoaded', () => {
+    setActiveFlag('flag-fr');
+    applyTranslations('fr');
+});
