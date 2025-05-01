@@ -17,7 +17,7 @@ function renderSectionStructure(sectionKey) {
         h4s.forEach((h4, idx) => {
             // Supporte les deux formats : string ou objet
             let titre = h4.titre || h4;
-            let sousTitre = getTranslation(h4.sousTitre, currentLang) || '';
+            let sousTitre = h4.sousTitre || '' ;
             let image = h4.image || 'assets/images/profil/default.png'; // image par défaut
             const isEven = (catIndex + idx) % 2 === 0;
             let customClass = h4.customClass ? h4.customClass : '';
@@ -26,11 +26,11 @@ function renderSectionStructure(sectionKey) {
                 html += `
                 <div class="trapeze-row">
                     <div class="trapeze-img img-left">
-                        <img src="${image}" alt="Image projet ${titre}" style="width:100%;object-fit:cover;display:block;margin:auto;" class="${customClass}" />
+                        <img src="${image}" alt="key_${titre}" style="width:100%;object-fit:cover;display:block;margin:auto;" class="${customClass}" />
                     </div>
                     <div class="trapeze-content">
-                        <h4 class="text-3xl font-semibold text-black mb-2 text-center">${getTranslation(titre, currentLang)}</h4>
-                        <p class='text-lg text-gray-400 text-center mb-2'>${sousTitre}</p>
+                        <h4 class="text-3xl font-semibold text-black mb-2 text-center" data-key="${titre}">${getTranslation(titre, currentLang)}</h4>
+                        <p class='text-lg text-gray-400 text-center mb-2' data-key="${sousTitre}">${getTranslation(h4.sousTitre, currentLang) || ''}</p>
                     </div>
                 </div>
                 `;
@@ -39,15 +39,16 @@ function renderSectionStructure(sectionKey) {
                 html += `
                 <div class="trapeze-row">
                     <div class="trapeze-content right">
-                        <h4 class="text-3xl font-semibold text-black mb-2 text-center">${getTranslation(titre, currentLang)}</h4>
-                        <p class='text-lg text-gray-400 text-center mb-2'>${sousTitre}</p>
+                        <h4 class="text-3xl font-semibold text-black mb-2 text-center" data-key="${titre}">${getTranslation(titre, currentLang)}</h4>
+                        <p class='text-lg text-gray-400 text-center mb-2' data-key="${sousTitre}">${sousTitre}</p>
                     </div>
                     <div class="trapeze-img right">
-                        <img src="${image}" alt="Image projet ${titre}" style="width:100%;object-fit:cover;display:block;margin:auto;" class="${customClass}" />
+                        <img src="${image}" alt="key_${titre}" style="width:100%;object-fit:cover;display:block;margin:auto;" class="${customClass}" />
                     </div>
                 </div>
                 `;
             }
+
         });
         catIndex += h4s.length;
     });
@@ -61,6 +62,7 @@ document.querySelectorAll('.project-card[data-project]').forEach(card => {
         const sectionKey = card.dataset.project;
         if (sectionData[sectionKey]) {
             renderSectionStructure(sectionKey);
+            applyTranslations(currentLang); // Applique les traductions après la génération
         }
     });
 });
