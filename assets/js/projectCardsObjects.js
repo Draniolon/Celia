@@ -29,8 +29,8 @@ function renderSectionStructure(sectionKey) {
                         <img src="${image}" alt="Image projet ${titre}" style="width:100%;object-fit:cover;display:block;margin:auto;" class="${customClass}" />
                     </div>
                     <div class="trapeze-content">
-                        <h4 class="text-lg font-semibold text-black mb-2 text-center">${getTranslation(titre, currentLang)}</h4>
-<p class='text-sm text-gray-400 text-center mb-2'>${sousTitre}</p>
+                        <h4 class="text-3xl font-semibold text-black mb-2 text-center">${getTranslation(titre, currentLang)}</h4>
+                        <p class='text-lg text-gray-400 text-center mb-2'>${sousTitre}</p>
                     </div>
                 </div>
                 `;
@@ -39,8 +39,8 @@ function renderSectionStructure(sectionKey) {
                 html += `
                 <div class="trapeze-row">
                     <div class="trapeze-content right">
-                        <h4 class="text-lg font-semibold text-black mb-2 text-center">${getTranslation(titre, currentLang)}</h4>
-<p class='text-sm text-gray-400 text-center mb-2'>${sousTitre}</p>
+                        <h4 class="text-3xl font-semibold text-black mb-2 text-center">${getTranslation(titre, currentLang)}</h4>
+                        <p class='text-lg text-gray-400 text-center mb-2'>${sousTitre}</p>
                     </div>
                     <div class="trapeze-img right">
                         <img src="${image}" alt="Image projet ${titre}" style="width:100%;object-fit:cover;display:block;margin:auto;" class="${customClass}" />
