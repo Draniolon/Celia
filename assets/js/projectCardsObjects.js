@@ -12,7 +12,7 @@ function renderSectionStructure(sectionKey) {
         if (!section.h2[h2]) return;
         const h4s = section.h2[h2];
         html += `
-        <h2 class="text-2xl font-bold text-white text-opacity-70 mb-4 text-center">${getTranslation(h2, currentLang)}</h2>
+        <h2 class="text-2xl font-bold text-white text-opacity-70 mb-4 text-center" data-key="${h2}">${getTranslation(h2, currentLang)}</h2>
         `;
         h4s.forEach((h4, idx) => {
             // Supporte les deux formats : string ou objet

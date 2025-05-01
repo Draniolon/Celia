@@ -137,7 +137,6 @@ const originalAlts = [];
 
 // Fonction utilitaire pour récupérer la traduction d'une clé
 function getTranslation(key, lang = 'fr') {
-    console.log(`Fetching translation for key: ${key}, language: ${lang}`);
     const entry = translationsList.find(t => t.key === key);
     return entry ? entry[lang] : key;
 }
@@ -177,8 +176,8 @@ function applyTranslations(lang = 'fr') {
     });
 }
 
-
-
+// Gere l'activation des drapeaux
+let currentLang = 'fr';
 
 // Au chargement de la page, on applique la traduction française par défaut
 window.addEventListener('DOMContentLoaded', () => {
@@ -188,8 +187,6 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('flag-en')?.addEventListener('click', () => applyTranslations('en'));
 });
 
-// Gere l'activation des drapeaux
-let currentLang = 'fr';
 function setActiveFlag(flag) {
     document.getElementById('flag-fr').classList.add('flag-active');
     document.getElementById('flag-en').classList.remove('flag-active');
