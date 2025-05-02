@@ -141,32 +141,33 @@ function getTranslation(key, lang = 'fr') {
     return entry ? entry[lang] : key;
 }
 
+
 // Fonction principale d'application des traductions
 function applyTranslations(lang = 'fr') {
     // Traduction des éléments avec un id key_xx
-    translationsList.forEach(({key}) => {
+    translationsList.forEach(({ key }) => {
+        // Sélectionne tous les éléments existants avec l'ID correspondant
         const elements = document.querySelectorAll(`[id='${key}']`);
         elements.forEach(el => {
             el.textContent = getTranslation(key, lang);
-            // Rendre visible l'élément (block pour titres, inline pour span, etc.)
-            if (el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'P' || el.tagName === 'DIV') {
+            if (['H1', 'H2', 'P', 'DIV', 'H4'].includes(el.tagName)) {
                 el.style.display = 'block';
             } else {
                 el.style.display = '';
             }
         });
     });
-    // Pour compatibilité : ancienne méthode sur le reste du DOM
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-    let node;
-    while ((node = walker.nextNode())) {
-        if (node.parentNode && ['SCRIPT', 'STYLE'].includes(node.parentNode.tagName)) continue;
-        const keyMatch = node.nodeValue && node.nodeValue.trim().match(/^key_\d+$/);
-        if (keyMatch) {
-            node.nodeValue = getTranslation(keyMatch[0], lang);
+
+    // Traduction des éléments avec data-key
+    document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        const translation = getTranslation(key, lang);
+        if (translation) {
+            el.textContent = translation;
         }
-    }
-    // Pour les alt d'images
+    });
+
+    // Traduction des alt d'images
     document.querySelectorAll('img[alt]').forEach((img) => {
         const keyMatch = img.alt && img.alt.trim().match(/^key_\d+$/);
         if (keyMatch) {
@@ -175,39 +176,7 @@ function applyTranslations(lang = 'fr') {
     });
 }
 
-
-// Au chargement de la page, on applique la traduction française par défaut
-window.addEventListener('DOMContentLoaded', () => {
-    applyTranslations('fr');
-    // Gestion des drapeaux
-    document.getElementById('flag-fr')?.addEventListener('click', () => applyTranslations('fr'));
-    document.getElementById('flag-en')?.addEventListener('click', () => applyTranslations('en'));
-});
-
-// Gere l'activation des drapeaux
-let currentLang = 'fr';
-function setActiveFlag(flag) {
-    document.getElementById('flag-fr').classList.add('flag-active');
-    document.getElementById('flag-en').classList.remove('flag-active');
-    if (flag === 'flag-en') {
-        document.getElementById('flag-fr').classList.remove('flag-active');
-        document.getElementById('flag-en').classList.add('flag-active');
-    }
-}
-document.getElementById('flag-fr').addEventListener('click', function () {
-    setActiveFlag('flag-fr');
-});
-document.getElementById('flag-en').addEventListener('click', function () {
-    setActiveFlag('flag-en');
-});
-
-// Initialisation : activer le drapeau FR par défaut
-setActiveFlag('flag-fr');
-
-
-
-
-// Structure des sections, h2 et h3
+// Structure des sections, h2 et h4
 const sectionData = {
     ecole: {
         h1: "key_67",
@@ -229,7 +198,7 @@ const sectionData = {
         h2: {
             "key_82": [
                 { titre: "key_83", sousTitre: "key_84", image: "assets/projets/perso/Dessins/Horloge.png" },
-                { titre: "Moustache", sousTitre: "Projet d’art symbolique rassemblant différents éléments associés à la vie et la mort, en une composition unique.", image: "assets/projets/perso/Dessins/Moustache.png" },
+                { titre: "Moustache", sousTitre: "key_11", image: "assets/projets/perso/Dessins/Moustache.png" },
                 { titre: "Dranio Vitrail", image: "assets/projets/perso/Dessins/Dranio_vitrail.jpg" },
                 { titre: "Pokemon", sousTitre: "key_10", image: "assets/projets/perso/Dessins/Folivane.png", customClass: "pokemon-img" }
             ],
@@ -281,3 +250,31 @@ const sectionData = {
         }
     }
 };
+
+// Gere l'activation des drapeaux
+let currentLang = 'fr';
+
+function setActiveFlag(flag) {
+    document.getElementById('flag-fr').classList.add('flag-active');
+    document.getElementById('flag-en').classList.remove('flag-active');
+    if (flag === 'flag-en') {
+        document.getElementById('flag-fr').classList.remove('flag-active');
+        document.getElementById('flag-en').classList.add('flag-active');
+    }
+}
+document.getElementById('flag-fr').addEventListener('click', function () {
+    setActiveFlag('flag-fr');
+    currentLang = 'fr';
+    applyTranslations('fr')
+});
+document.getElementById('flag-en').addEventListener('click', function () {
+    setActiveFlag('flag-en');
+    currentLang = 'en';
+    applyTranslations('en')
+});
+
+// Au chargement de la page, on applique la traduction française par défaut
+window.addEventListener('DOMContentLoaded', () => {
+    setActiveFlag('flag-fr');
+    applyTranslations('fr');
+});
