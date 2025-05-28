@@ -197,7 +197,6 @@ const sectionData = {
                 { titre: "key_87", sousTitre: "key_88", image: "assets/projets/ecole/Pub/Chocolats_Carmen/Base boîte D.png" },
                 { titre: "key_89", sousTitre: "key_90", image: "assets/projets/ecole/Pub/Kleneex/kleenex.png" },
                 { titre: "key_91", sousTitre: "key_92", image: "assets/projets/ecole/Pub/Swarovski/swaroski.png" },
-                { titre: "key_145", sousTitre: "key_146", image: "assets/projets/ecole/Pub/Axoloth/Axoloth.png" }
             ],
             "key_76": [
                 { titre: "key_93", sousTitre: "key_94", image: "assets/projets/ecole/Exercices/Depliant A.png" },
@@ -212,7 +211,8 @@ const sectionData = {
                 { titre: "key_83", sousTitre: "key_84", image: "assets/projets/perso/Dessins/Horloge.png" },
                 { titre: "Moustache", sousTitre: "key_11", image: "assets/projets/perso/Dessins/Moustache.png" },
                 { titre: "key_144", sousTitre: "key_136", image: "assets/projets/perso/Dessins/Dranio_vitrail.jpg" },
-                { titre: "Pokémon", sousTitre: "key_10", image: "assets/projets/perso/Dessins/Folivane.png", customClass: "pokemon-img" }
+                { titre: "Pokémon", sousTitre: "key_10", image: "assets/projets/perso/Dessins/Folivane.png", customClass: "pokemon-img" },
+                { titre: "key_145", sousTitre: "key_146", image: "assets/projets/perso/Dessins/Axoloth.png" }
             ],
             "key_137": [
                 { titre: "key_115", sousTitre: "key_1", image: "assets/projets/perso/Animations/Balle_rebondissante_2.gif" },
