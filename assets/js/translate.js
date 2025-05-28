@@ -137,6 +137,9 @@ const translationsList = [
   { key: "key_142", fr: "Musiques", en: "Music" },
   { key: "key_143", fr: "Artisanats", en: "Handicraft" },
   { key: "key_144", fr: "Vitrail", en: "Stained Glass" },
+  { key: "key_145", fr: "Axoloth", en: "Axoloth" },
+  { key: "key_146", fr: "Participation au concours consistant à illustrer un axoloth mélangé à un fruit de notre choix.", en: "Contest entry of an axoloth mixed with a fruit we want." },
+
 ];
 
 // Stockage des textes originaux
@@ -193,7 +196,8 @@ const sectionData = {
                 { titre: "key_85", sousTitre: "key_86", image: "assets/projets/ecole/Pub/Cannettes_Smile/mock-up1.png" },
                 { titre: "key_87", sousTitre: "key_88", image: "assets/projets/ecole/Pub/Chocolats_Carmen/Base boîte D.png" },
                 { titre: "key_89", sousTitre: "key_90", image: "assets/projets/ecole/Pub/Kleneex/kleenex.png" },
-                { titre: "key_91", sousTitre: "key_92", image: "assets/projets/ecole/Pub/Swarovski/swaroski.png" }
+                { titre: "key_91", sousTitre: "key_92", image: "assets/projets/ecole/Pub/Swarovski/swaroski.png" },
+                { titre: "key_145", sousTitre: "key_146", image: "assets/projets/ecole/Pub/Axoloth/Axoloth.png" }
             ],
             "key_76": [
                 { titre: "key_93", sousTitre: "key_94", image: "assets/projets/ecole/Exercices/Depliant A.png" },
