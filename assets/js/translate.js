@@ -285,6 +285,6 @@ document.getElementById('flag-en').addEventListener('click', function () {
 
 // Au chargement de la page, on applique la traduction française par défaut
 window.addEventListener('DOMContentLoaded', () => {
-    setActiveFlag('flag-fr');
-    applyTranslations('fr');
+    setActiveFlag('flag-en');
+    applyTranslations('en');
 });
